@@ -1,6 +1,6 @@
 const https = require('https');
-const express = require('express');
-const app = express();
+/* const express = require('express');
+const app = express(); */
 
 const Discord = require('discord.js');
 const auth = require('./auth.json');
@@ -166,4 +166,4 @@ bot.on('message',  message => {
 
 process.on('unhandledRejection', console.error);
 
-bot.login(auth.token);
+bot.login(process.env.BOT_TOKEN);
