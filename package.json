@@ -1,0 +1,28 @@
+{
+  "name": "Rachel Jokes",
+  "version": "0.0.1",
+  "description": "Rachel's jokes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "konstrain#8200",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  },
+  "engines": {
+    "node": "8.x",
+    "npm": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konstrain/racheljokes"
+  },
+  "license": "MIT",
+  "keywords": [
+    "heroku",
+    "node",
+    "glitch"
+  ]
+}
