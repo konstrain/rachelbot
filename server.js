@@ -63,6 +63,9 @@ bot.on('message',  message => {
         if ((message.content === 'r!joke') || (message.content === 'r!jokes')){
             message.react('😄');
         }
+        if (message.content === '!pixies rachel') {
+          message.react('\:kissing_heart:');
+        }
        
         args = args.splice(1);
         switch(cmd) {
