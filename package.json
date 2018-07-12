@@ -1,7 +1,7 @@
 {
   "name": "racheljokes",
   "version": "0.0.1",
-  "description": "Rachel's jokes",
+  "description": "Rachel's jokes and EXP Calculator",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,6 +9,7 @@
   },
   "author": "konstrain#8200",
   "dependencies": {
+    "csv": "^3.1.0",
     "discord.js": "^11.3.2"
   },
   "engines": {
@@ -23,6 +24,6 @@
   "keywords": [
     "heroku",
     "node",
-    "glitch"
+    "csv"
   ]
 }
