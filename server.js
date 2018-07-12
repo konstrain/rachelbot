@@ -2,8 +2,6 @@ const https = require('https');
 /* const express = require('express');
 const app = express(); */
 var fast_csv = require('fast-csv');
-var csvdb = require('csv-database');
-//var csv = require('csv');
 
 function MyCSV(Fone, Ftwo, Fthree) {
     this.FieldOne = Fone;
@@ -171,8 +169,6 @@ bot.on('message',  message => {
                 let [suitGrade, suitLvl, suitExp] = args;
                 var suitGradeLvl = suitGrade + " " + suitLvl;
 
-                const db = await csvdb("expCalc.csv", ["grade","level","exp"], ",");
-                
                 var tempArray=new Array();
                 
                 fast_csv.fromPath("expCalc.csv").on("data", function(data){
