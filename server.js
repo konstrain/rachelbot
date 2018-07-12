@@ -60,7 +60,7 @@ bot.on('message',  message => {
         var args = text.substring(2).split(' ');
         var cmd = args[0].toLowerCase();
       
-        if ((message.content === 'r!joke') || (message.content === 'r!jokes')){
+        if ((message.content === 'r!joke') || (message.content === 'r!jokes') || (message.content === '!pixies rachel')){
             message.react('😄');
         }
         if (message.content === '!pixies rachel') {
