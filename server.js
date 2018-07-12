@@ -1,6 +1,7 @@
 const https = require('https');
 /* const express = require('express');
 const app = express(); */
+var fast_csv = require('fast-csv');
 
 const Discord = require('discord.js');
 const auth = require('./auth.json');
@@ -159,6 +160,15 @@ bot.on('message',  message => {
 
             case 'exp':
                 let [suitGrade, suitLvl, suitExp] = args;
+                var tempArray=new Array();
+                console.log("START");
+                fast_csv.fromPath("expCalc.csv")
+                .on("data", function(data){
+                    console.log(data);
+                })
+                .on("end", function(){
+                    console.log("done");
+                });
 
                 switch (suitGrade) {
                     case 'US':
