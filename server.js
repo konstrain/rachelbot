@@ -1,7 +1,16 @@
 const https = require('https');
 /* const express = require('express');
 const app = express(); */
-var fast_csv = require('fast-csv');
+//var fast_csv = require('fast-csv');
+var csv = require('csv');
+
+var obj = csv(); ​
+function MyCSV(Fone, Ftwo, Fthree) {
+    this.FieldOne = Fone;
+    this.FieldTwo = Ftwo;
+    this.FieldThree = Fthree;
+};
+var MyData = [];
 
 const Discord = require('discord.js');
 const auth = require('./auth.json');
@@ -160,21 +169,22 @@ bot.on('message',  message => {
 
             case 'exp':
                 let [suitGrade, suitLvl, suitExp] = args;
-                var tempArray=new Array();
-                console.log("START");
-                fast_csv.fromPath("expCalc.csv")
-                .on("data", function(data){
-                    console.log(data);
-                })
-                .on("end", function(){
-                    console.log("done");
+                var suitGradeLvl = suitGrade + " " + suitLvl;
+
+                obj.from.path('expCalc.csv').to.array(function (data) {
+                    for (var index = 0; index < data.length; index++) {
+                        MyData.push(new MyCSV(data[index][0], data[index][1], data[index][2]));
+                    }
+                    console.log(MyData);
                 });
-
-                switch (suitGrade) {
-                    case 'US':
-                    break;
-
-                }
+                
+                /*
+                var tempArray=new Array();
+                
+                fast_csv.fromPath("expCalc.csv").on("data", function(data){
+                    tempArray.push(data[1]);
+                    console.log(tempArray);
+                }) */
 
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
 
