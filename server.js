@@ -1,14 +1,12 @@
 const https = require('https');
 /* const express = require('express');
 const app = express(); */
-var fast_csv = require('fast-csv');
-
-function MyCSV(Fone, Ftwo, Fthree) {
-    this.FieldOne = Fone;
-    this.FieldTwo = Ftwo;
-    this.FieldThree = Fthree;
-};
-var MyData = [];
+//var fast_csv = require('fast-csv');
+var fs = require('fs');
+var parse = require('csv-parse');
+ 
+var inputFile='expCalc.csv';
+console.log("Processing CSV file");
 
 const Discord = require('discord.js');
 const auth = require('./auth.json');
@@ -169,17 +167,44 @@ bot.on('message',  message => {
                 let [suitGrade, suitLvl, suitExp] = args;
                 var suitGradeLvl = suitGrade + " " + suitLvl;
 
-                var tempArray=new Array();
-                
-                fast_csv.fromPath("expCalc.csv").on("data", function(data){
-                  for (var index = 0; index < data.length; index++) {
-                    MyData.push(new MyCSV(data[index][0], data[index][1], data[index][2]));
-                  }
-                  console.log(MyData);
-                }) 
+                var parser = parse({delimiter: ','}, function (err, data) {
+                    data.forEach(function(line) {
+                      var suits = { 
+                        "grade" : line[0], 
+                        "expReq" : line[1], 
+                        "expCum" : line[2]
+                      };
+
+                    if(suitGradeLvl===suits.grade) {
+                      channel.send({
+                        embed: {
+                          color:5685672,
+                          title: `Grade:**${suitGrade}**  -  Level:**${suitLvl}**`,
+                          description: "Check how much experience your suit needs to reach max.",
+                          thumbnail: {
+                            "url": "https://farm1.staticflickr.com/891/28044949567_ef8d140588.jpg"
+                          },
+                          fields: [
+                            {
+                              "name": "EXP Required to max",
+                              "value": `${suits.expCum-suitExp}`
+                            },
+                            {
+                              "name": "Great success required",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/2)}`
+                            }
+                          ]
+                        }
+                      });
+
+                      //console.log(suits.expCum);
+                    }
+                    //console.log(JSON.stringify(suits));
+                    });    
+                });
+                fs.createReadStream(inputFile).pipe(parser);
 
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
-
 
                 break;
             default:
