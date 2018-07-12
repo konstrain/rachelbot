@@ -1,8 +1,8 @@
 const https = require('https');
 /* const express = require('express');
 const app = express(); */
-//var fast_csv = require('fast-csv');
-var csv = require('csv');
+var fast_csv = require('fast-csv');
+//var csv = require('csv');
 
 function MyCSV(Fone, Ftwo, Fthree) {
     this.FieldOne = Fone;
