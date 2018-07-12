@@ -4,7 +4,7 @@ const app = express(); */
 //var fast_csv = require('fast-csv');
 var csv = require('csv');
 
-var obj = csv(); ​
+var obj = csv();
 function MyCSV(Fone, Ftwo, Fthree) {
     this.FieldOne = Fone;
     this.FieldTwo = Ftwo;
