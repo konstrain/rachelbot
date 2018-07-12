@@ -4,7 +4,6 @@ const app = express(); */
 //var fast_csv = require('fast-csv');
 var csv = require('csv');
 
-var obj = csv();
 function MyCSV(Fone, Ftwo, Fthree) {
     this.FieldOne = Fone;
     this.FieldTwo = Ftwo;
@@ -171,20 +170,15 @@ bot.on('message',  message => {
                 let [suitGrade, suitLvl, suitExp] = args;
                 var suitGradeLvl = suitGrade + " " + suitLvl;
 
-                obj.from.path('expCalc.csv').to.array(function (data) {
-                    for (var index = 0; index < data.length; index++) {
-                        MyData.push(new MyCSV(data[index][0], data[index][1], data[index][2]));
-                    }
-                    console.log(MyData);
-                });
                 
-                /*
                 var tempArray=new Array();
                 
                 fast_csv.fromPath("expCalc.csv").on("data", function(data){
-                    tempArray.push(data[1]);
-                    console.log(tempArray);
-                }) */
+                  for (var index = 0; index < data.length; index++) {
+                    MyData.push(new MyCSV(data[index][0], data[index][1], data[index][2]));
+                  }
+                  console.log(MyData);
+                }) 
 
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
 
