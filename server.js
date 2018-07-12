@@ -51,21 +51,23 @@ bot.on('message',  message => {
   var text = message.content;
   var channel = message.channel;
   
-    
-  if (!message.content.startsWith(auth.prefix) || message.author.bot) return;
+
+  if (!text.startsWith(auth.prefix) || message.author.bot) return;
   
+  if (text === '!pixies rachel') {
+    message.react('\:kissing_heart:');
+  }
   console.log(message.author.username);
   
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
-        var args = text.substring(2).split(' ');
-        var cmd = args[0].toLowerCase();
+        //var args = text.substring(2).split(' ');
+        //var cmd = args[0].toLowerCase();
+        const args = text.slice(prefix.length).trim().split(/ +/g);
+        const cmd = args.shift().toLowerCase();
       
-        if ((message.content === 'r!joke') || (message.content === 'r!jokes') || (message.content === '!pixies rachel')){
+        if ((text === 'r!joke') || (text === 'r!jokes')){
             message.react('😄');
-        }
-        if (message.content === '!pixies rachel') {
-          message.react('\:kissing_heart:');
-        }
+        }        
        
         args = args.splice(1);
         switch(cmd) {
@@ -156,6 +158,10 @@ bot.on('message',  message => {
                 });
             channel.send(`\n\n If you need info on suits, pixies and skills, type !help.`);
             
+                break;
+
+            case 'exp':
+                
                 break;
             default:
                 channel.send(`I don\'t understand that command, captain. Seek ${auth.prefix}help`);
