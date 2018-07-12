@@ -155,6 +155,10 @@ bot.on('message',  message => {
                       {
                         "name": "awaken",
                         "value": "Watch me awaken again and again and again and... :flushed:"
+                      },
+                      {
+                        "name": "exp <Suit Grade> <Suit Level> <Suit Exp>",
+                        "value": `Check how much exp needed to max. Example, r!exp US 10 50213`
                       }                      
                       ]
                   }
