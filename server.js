@@ -53,10 +53,7 @@ bot.on('message',  message => {
   
 
   if (!text.startsWith(auth.prefix) || message.author.bot) return;
-  
-  if (text === '!pixies rachel') {
-    message.react('\:kissing_heart:');
-  }
+
   console.log(message.author.username);
   
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
@@ -69,7 +66,7 @@ bot.on('message',  message => {
             message.react('😄');
         }        
        
-        args = args.splice(1);
+        //args = args.splice(1);
         switch(cmd) {
             // !joke
             case 'joke':
@@ -161,6 +158,9 @@ bot.on('message',  message => {
                 break;
 
             case 'exp':
+                let [suitGrade, suitLvl, suitExp] = args;
+                channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
+
                 
                 break;
             default:
