@@ -62,7 +62,7 @@ bot.on('message',  message => {
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
         //var args = text.substring(2).split(' ');
         //var cmd = args[0].toLowerCase();
-        const args = text.slice(prefix.length).trim().split(/ +/g);
+        const args = text.slice(auth.prefix.length).trim().split(/ +/g);
         const cmd = args.shift().toLowerCase();
       
         if ((text === 'r!joke') || (text === 'r!jokes')){
