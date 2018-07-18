@@ -202,21 +202,43 @@ bot.on('message',  message => {
                               "value": `${Math.ceil((suits.expCum-suitExp)/2)}`
                             },
                             {
-                              "name": "US mini mini (same class) required to max",
-                              "value": `${suits.miniUS}`
+                              "name": "US mini mini (same class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/102960)}`
                             },
                             {
-                              "name": "S3 mini mini (same class) required to max",
-                              "value": `${suits.miniS3}`
+                              "name": "US mini mini (different class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/68640)}`
                             },
                             {
-                              "name": "S2 mini mini (same class) required to max",
-                              "value": `${suits.miniS2}`
+                              "name": "S3 mini mini (same class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/56475)}`
                             },
                             {
-                              "name": "S mini mini (same class) required to max",
-                              "value": `${suits.miniS}`
+                              "name": "S3 mini mini (different class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/37650)}`
+                            },
+                            {
+                              "name": "S2 mini mini (same class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/23355)}`
+                            },
+                            {
+                              "name": "S2 mini mini (different class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/15570)}`
+                            },
+                            {
+                              "name": "S mini mini (same class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/9810)}`
+                            },
+                            {
+                              "name": "S mini mini (different class)",
+                              "value": `${Math.ceil((suits.expCum-suitExp)/6540)}`
                             }
+                            /*
+                            US same class 102960     US diff class 68640
+                            S3 same class 56475      S3 diff class 37650
+                            S2 same class 23355      S2 diff class 15570
+                            S same class 9810        S diff class 6540
+                            */
                           ]
                         }
                       });
