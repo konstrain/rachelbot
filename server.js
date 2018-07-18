@@ -193,8 +193,7 @@ bot.on('message',  message => {
                             "url": "https://farm1.staticflickr.com/891/28044949567_ef8d140588.jpg"
                           },
                           author: {
-                            "name": `${message.author.username}`,
-                            "icon_url": `${message.author.avatarURL}`
+                            "name": `${message.author.username}'s suit`
                           },
                           fields: [
                             {
@@ -213,70 +212,55 @@ bot.on('message',  message => {
 
                       channel.send({
                         embed: {
-                          color:5685672,
+                          color:9871541,
                           fields: [
                             {
-                              "name": "US mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/102960)}`,
+                              "name": "US Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/102960)}`,
                               "inline": true
                             },
                             {
-                              "name": "US mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/68640)}`,
-                              "inline": true
-                            }
-                          ]
-                        }
-                      });
-                      channel.send({
-                        embed: {
-                          color:5685672,
-                          fields: [
-                            {
-                              "name": "S3 mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/56475)}`,
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/68640)}`,
                               "inline": true
                             },
                             {
-                              "name": "S3 mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/37650)}`,
-                              "inline": true
-                            }
-                          ]
-                        }
-                      });
-
-                      channel.send({
-                        embed: {
-                          color:5685672,
-                          fields: [
+                              "value": "Greater Success Rate: 7.5%"
+                            },
                             {
-                              "name": "S2 mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/23355)}`,
+                              "name": "S3 Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)}`,
                               "inline": true
                             },
                             {
-                              "name": "S2 mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/15570)}`,
-                              "inline": true
-                            }
-                          ]
-                        }
-                      });
-
-                      channel.send({
-                        embed: {
-                          color:5685672,
-                          fields: [
-                            {
-                              "name": "S mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/9810)}`,
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)}`,
                               "inline": true
                             },
                             {
-                              "name": "S mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/6540)}`,
+                              "value": "Greater Success Rate: 7.5%"
+                            },
+                            {
+                              "name": "S2 Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)}`,
                               "inline": true
+                            },
+                            {
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)}`,
+                              "inline": true
+                            },
+                            {
+                              "value": "Greater Success Rate: 7.5%"
+                            },
+                            {
+                              "name": "S Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/9810)}`,
+                              "inline": true
+                            },
+                            {
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)}`,
+                              "inline": true
+                            },
+                            {
+                              "value": "Greater Success Rate: 6.6%"
                             }
                             /*
                             US same class 102960     US diff class 68640
@@ -287,7 +271,6 @@ bot.on('message',  message => {
                           ]
                         }
                       });
-
                       //console.log(suits.expCum);
                     }
                     //console.log(JSON.stringify(suits));
