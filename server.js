@@ -176,7 +176,11 @@ bot.on('message',  message => {
                       var suits = { 
                         "grade" : line[0], 
                         "expReq" : line[1], 
-                        "expCum" : line[2]
+                        "expCum" : line[2],
+                        "miniUS" : line [3],
+                        "miniS3" : line [4],
+                        "miniS2" : line [5],
+                        "miniS" : line [6]
                       };
 
                     if(suitGradeLvl===suits.grade) {
@@ -190,12 +194,28 @@ bot.on('message',  message => {
                           },
                           fields: [
                             {
-                              "name": "EXP Required to max",
+                              "name": "EXP required to max",
                               "value": `${suits.expCum-suitExp}`
                             },
                             {
                               "name": "Great success required",
                               "value": `${Math.ceil((suits.expCum-suitExp)/2)}`
+                            },
+                            {
+                              "name": "US mini mini (same class) required to max",
+                              "value": `${suits.miniUS}`
+                            },
+                            {
+                              "name": "S3 mini mini (same class) required to max",
+                              "value": `${suits.miniS3}`
+                            },
+                            {
+                              "name": "S2 mini mini (same class) required to max",
+                              "value": `${suits.miniS2}`
+                            },
+                            {
+                              "name": "S mini mini (same class) required to max",
+                              "value": `${suits.miniS}`
                             }
                           ]
                         }
