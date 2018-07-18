@@ -215,44 +215,20 @@ bot.on('message',  message => {
                           color:9871541,
                           fields: [
                             {
-                              "name": "US Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/102960)} unit(s)`,
-                              "inline": true
+                              "name": "US Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/102960)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/68640)} unit(s)`
                             },
                             {
-                              "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/68640)} unit(s)`,
-                              "inline": true
+                              "name": "S3 Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)} unit(s)`
                             },
                             {
-                              "name": "S3 Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)} unit(s)`,
-                              "inline": true
+                              "name": "S2 Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)} unit(s)`
                             },
                             {
-                              "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)} unit(s)`,
-                              "inline": true
-                            },
-                            {
-                              "name": "S2 Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)} unit(s)`,
-                              "inline": true
-                            },
-                            {
-                              "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)} unit(s)`,
-                              "inline": true
-                            },
-                            {
-                              "name": "S Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/9810)} unit(s)`,
-                              "inline": true
-                            },
-                            {
-                              "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)} unit(s)`,
-                              "inline": true
+                              "name": "S Mini-Mini",
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/9810)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)} unit(s)`
                             }
                             /*
                             US same class 102960     US diff class 68640
