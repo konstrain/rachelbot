@@ -220,10 +220,12 @@ bot.on('message',  message => {
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/68640)}`,
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": "Greater Success Rate: 7.5%"
                             },
                             {
@@ -232,10 +234,12 @@ bot.on('message',  message => {
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)}`,
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": "Greater Success Rate: 7.5%"
                             },
                             {
@@ -244,10 +248,12 @@ bot.on('message',  message => {
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)}`,
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": "Greater Success Rate: 7.5%"
                             },
                             {
@@ -256,10 +262,12 @@ bot.on('message',  message => {
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)}`,
                               "inline": true
                             },
                             {
+                              "name": " ",
                               "value": "Greater Success Rate: 6.6%"
                             }
                             /*
