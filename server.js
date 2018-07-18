@@ -187,13 +187,13 @@ bot.on('message',  message => {
                       channel.send({
                         embed: {
                           color:5685672,
-                          title: `Grade:**${suitGrade}**  -  Level:**${suitLvl}**`,
+                          title: `Level: ${suitLvl}`,
                           description: "```Check how much experience your suit needs to reach max.```",
                           thumbnail: {
                             "url": "https://d1u5p3l4wpay3k.cloudfront.net/masterofeternity_gamepedia_en/4/47/EnhUSAssaulticon.png?version=8d413a91b3747106c38630ebcdbe8fa9"
                           },
                           author: {
-                            "name": `${message.author.username}'s suit`
+                            "name": `${message.author.username}'s ${suitGrade} suit`
                           },
                           fields: [
                             {
