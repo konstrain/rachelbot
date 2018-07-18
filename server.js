@@ -190,7 +190,7 @@ bot.on('message',  message => {
                           title: `Grade:**${suitGrade}**  -  Level:**${suitLvl}**`,
                           description: "```Check how much experience your suit needs to reach max.```",
                           thumbnail: {
-                            "url": "https://farm1.staticflickr.com/891/28044949567_ef8d140588.jpg"
+                            "url": "https://d1u5p3l4wpay3k.cloudfront.net/masterofeternity_gamepedia_en/4/47/EnhUSAssaulticon.png?version=8d413a91b3747106c38630ebcdbe8fa9"
                           },
                           author: {
                             "name": `${message.author.username}'s suit`
@@ -216,59 +216,43 @@ bot.on('message',  message => {
                           fields: [
                             {
                               "name": "US Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/102960)}`,
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/102960)} unit(s)`,
                               "inline": true
                             },
                             {
                               "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/68640)}`,
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/68640)} unit(s)`,
                               "inline": true
-                            },
-                            {
-                              "name": "Greater Success Rate",
-                              "value": "7.5%"
                             },
                             {
                               "name": "S3 Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)}`,
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)} unit(s)`,
                               "inline": true
                             },
                             {
                               "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)}`,
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)} unit(s)`,
                               "inline": true
-                            },
-                            {
-                              "name": "Greater Success Rate",
-                              "value": "7.5%"
                             },
                             {
                               "name": "S2 Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)}`,
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)} unit(s)`,
                               "inline": true
                             },
                             {
                               "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)}`,
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)} unit(s)`,
                               "inline": true
-                            },
-                            {
-                              "name": "Greater Success Rate",
-                              "value": "7.5%"
                             },
                             {
                               "name": "S Mini",
-                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/9810)}`,
+                              "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/9810)} unit(s)`,
                               "inline": true
                             },
                             {
                               "name": "Mini",
-                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)}`,
+                              "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)} unit(s)`,
                               "inline": true
-                            },
-                            {
-                              "name": "Greater Success Rate",
-                              "value": "6.6%"
                             }
                             /*
                             US same class 102960     US diff class 68640
