@@ -195,43 +195,53 @@ bot.on('message',  message => {
                           fields: [
                             {
                               "name": "EXP required to max",
-                              "value": `${suits.expCum-suitExp}`
+                              "value": `${suits.expCum-suitExp}`,
+                              "inline": true
                             },
                             {
                               "name": "Great success required",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/2)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/2)}`,
+                              "inline": true
                             },
                             {
                               "name": "US mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/102960)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/102960)}`,
+                              "inline": true
                             },
                             {
                               "name": "US mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/68640)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/68640)}`,
+                              "inline": true
                             },
                             {
                               "name": "S3 mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/56475)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/56475)}`,
+                              "inline": true
                             },
                             {
                               "name": "S3 mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/37650)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/37650)}`,
+                              "inline": true
                             },
                             {
                               "name": "S2 mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/23355)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/23355)}`,
+                              "inline": true
                             },
                             {
                               "name": "S2 mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/15570)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/15570)}`,
+                              "inline": true
                             },
                             {
                               "name": "S mini mini (same class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/9810)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/9810)}`,
+                              "inline": true
                             },
                             {
                               "name": "S mini mini (different class)",
-                              "value": `${Math.ceil((suits.expCum-suitExp)/6540)}`
+                              "value": `${Math.ceil((suits.expCum-suitExp)/6540)}`,
+                              "inline": true
                             }
                             /*
                             US same class 102960     US diff class 68640
