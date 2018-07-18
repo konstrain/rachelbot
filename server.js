@@ -192,6 +192,10 @@ bot.on('message',  message => {
                           thumbnail: {
                             "url": "https://farm1.staticflickr.com/891/28044949567_ef8d140588.jpg"
                           },
+                          author: {
+                            "name": `${message.author.username}`,
+                            "icon_url": `${message.author.avatarURL}`
+                          },
                           fields: [
                             {
                               "name": "EXP required to max",
