@@ -188,7 +188,7 @@ bot.on('message',  message => {
                         embed: {
                           color:5685672,
                           title: `Grade:**${suitGrade}**  -  Level:**${suitLvl}**`,
-                          description: "Check how much experience your suit needs to reach max.",
+                          description: "```Check how much experience your suit needs to reach max.```",
                           thumbnail: {
                             "url": "https://farm1.staticflickr.com/891/28044949567_ef8d140588.jpg"
                           },
@@ -206,7 +206,15 @@ bot.on('message',  message => {
                               "name": "Great success required",
                               "value": `${Math.ceil((suits.expCum-suitExp)/2)}`,
                               "inline": true
-                            },
+                            }
+                          ]
+                        }
+                      });
+
+                      channel.send({
+                        embed: {
+                          color:5685672,
+                          fields: [
                             {
                               "name": "US mini mini (same class)",
                               "value": `${Math.ceil((suits.expCum-suitExp)/102960)}`,
@@ -216,7 +224,14 @@ bot.on('message',  message => {
                               "name": "US mini mini (different class)",
                               "value": `${Math.ceil((suits.expCum-suitExp)/68640)}`,
                               "inline": true
-                            },
+                            }
+                          ]
+                        }
+                      });
+                      channel.send({
+                        embed: {
+                          color:5685672,
+                          fields: [
                             {
                               "name": "S3 mini mini (same class)",
                               "value": `${Math.ceil((suits.expCum-suitExp)/56475)}`,
@@ -226,7 +241,15 @@ bot.on('message',  message => {
                               "name": "S3 mini mini (different class)",
                               "value": `${Math.ceil((suits.expCum-suitExp)/37650)}`,
                               "inline": true
-                            },
+                            }
+                          ]
+                        }
+                      });
+
+                      channel.send({
+                        embed: {
+                          color:5685672,
+                          fields: [
                             {
                               "name": "S2 mini mini (same class)",
                               "value": `${Math.ceil((suits.expCum-suitExp)/23355)}`,
@@ -236,7 +259,15 @@ bot.on('message',  message => {
                               "name": "S2 mini mini (different class)",
                               "value": `${Math.ceil((suits.expCum-suitExp)/15570)}`,
                               "inline": true
-                            },
+                            }
+                          ]
+                        }
+                      });
+
+                      channel.send({
+                        embed: {
+                          color:5685672,
+                          fields: [
                             {
                               "name": "S mini mini (same class)",
                               "value": `${Math.ceil((suits.expCum-suitExp)/9810)}`,
