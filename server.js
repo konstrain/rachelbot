@@ -215,60 +215,60 @@ bot.on('message',  message => {
                           color:9871541,
                           fields: [
                             {
-                              "name": "US Mini-Mini",
+                              "name": "US Mini",
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/102960)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
+                              "name": "Mini",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/68640)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
-                              "value": "Greater Success Rate: 7.5%"
+                              "name": "Greater Success Rate",
+                              "value": "7.5%"
                             },
                             {
-                              "name": "S3 Mini-Mini",
+                              "name": "S3 Mini",
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
+                              "name": "Mini",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
-                              "value": "Greater Success Rate: 7.5%"
+                              "name": "Greater Success Rate",
+                              "value": "7.5%"
                             },
                             {
-                              "name": "S2 Mini-Mini",
+                              "name": "S2 Mini",
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
+                              "name": "Mini",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
-                              "value": "Greater Success Rate: 7.5%"
+                              "name": "Greater Success Rate",
+                              "value": "7.5%"
                             },
                             {
-                              "name": "S Mini-Mini",
+                              "name": "S Mini",
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/9810)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
+                              "name": "Mini",
                               "value": `Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)}`,
                               "inline": true
                             },
                             {
-                              "name": " ",
-                              "value": "Greater Success Rate: 6.6%"
+                              "name": "Greater Success Rate",
+                              "value": "6.6%"
                             }
                             /*
                             US same class 102960     US diff class 68640
