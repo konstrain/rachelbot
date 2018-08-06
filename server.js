@@ -213,6 +213,7 @@ bot.on('message',  message => {
                       channel.send({
                         embed: {
                           color:9871541,
+                          description: "Information has not been updated. There are some issues and the numbers are not tallying with nexon ones."
                           fields: [
                             {
                               "name": "US Mini-Mini",
@@ -220,12 +221,10 @@ bot.on('message',  message => {
                             },
                             {
                               "name": "S3 Mini-Mini",
-                              description: "Information has not been updated. There are some issues and the numbers are not tallying with nexon ones."
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)} unit(s)`
                             },
                             {
                               "name": "S2 Mini-Mini",
-                              description: "Information has not been updated. There are some issues and the numbers are not tallying with nexon ones."
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)} unit(s)`
                             },
                             {
