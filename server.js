@@ -188,7 +188,7 @@ bot.on('message',  message => {
                         embed: {
                           color:5685672,
                           title: `Level: ${suitLvl}`,
-                          description: "```Check how much experience your suit needs to reach max.```",
+                          description: "```Check how much experience your suit needs to reach max. For S2, S3, S3+1, S3+2 and S3+3: the information has not been updated. There are some issues and the numbers are not tallying with nexon ones.```",
                           thumbnail: {
                             "url": "https://d1u5p3l4wpay3k.cloudfront.net/masterofeternity_gamepedia_en/4/47/EnhUSAssaulticon.png?version=8d413a91b3747106c38630ebcdbe8fa9"
                           },
