@@ -213,7 +213,7 @@ bot.on('message',  message => {
                       channel.send({
                         embed: {
                           color:9871541,
-                          description: "S2 and S3 information are not updated. There are some issues and the numbers are not tallying with Nexon ones.",
+                          description: "S2 exp is not updated. S3 exp does not tally with Nexon ones.",
                           fields: [
                             {
                               "name": "US Mini-Mini",
@@ -224,7 +224,7 @@ bot.on('message',  message => {
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)} unit(s)`
                             },
                             {
-                              "name": "S2 Mini-Mini",
+                              "name": "S2 Mini-Mini (Not updated)",
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)} unit(s)`
                             },
                             {
