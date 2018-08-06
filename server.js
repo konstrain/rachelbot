@@ -213,7 +213,7 @@ bot.on('message',  message => {
                       channel.send({
                         embed: {
                           color:9871541,
-                          description: "Information has not been updated. There are some issues and the numbers are not tallying with nexon ones."
+                          description: "Information has not been updated. There are some issues and the numbers are not tallying with nexon ones.",
                           fields: [
                             {
                               "name": "US Mini-Mini",
