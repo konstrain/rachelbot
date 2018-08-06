@@ -188,7 +188,7 @@ bot.on('message',  message => {
                         embed: {
                           color:5685672,
                           title: `Level: ${suitLvl}`,
-                          description: "```Check how much experience your suit needs to reach max. For S2, S3, S3+1, S3+2 and S3+3: the information has not been updated. There are some issues and the numbers are not tallying with nexon ones.```",
+                          description: "```Check how much experience your suit needs to reach max.```",
                           thumbnail: {
                             "url": "https://d1u5p3l4wpay3k.cloudfront.net/masterofeternity_gamepedia_en/4/47/EnhUSAssaulticon.png?version=8d413a91b3747106c38630ebcdbe8fa9"
                           },
@@ -220,10 +220,12 @@ bot.on('message',  message => {
                             },
                             {
                               "name": "S3 Mini-Mini",
+                              description: "Information has not been updated. There are some issues and the numbers are not tallying with nexon ones."
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/56475)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/37650)} unit(s)`
                             },
                             {
                               "name": "S2 Mini-Mini",
+                              description: "Information has not been updated. There are some issues and the numbers are not tallying with nexon ones."
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/23355)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/15570)} unit(s)`
                             },
                             {
