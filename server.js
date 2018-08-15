@@ -188,7 +188,7 @@ bot.on('message',  message => {
                         embed: {
                           color:5685672,
                           title: `Level: ${suitLvl}`,
-                          description: "```Check how much experience your suit needs to reach max. !! S2 is not updated !! ```",
+                          description: "```Check how much experience your suit needs to reach max. ```",
                           thumbnail: {
                             "url": "https://d1u5p3l4wpay3k.cloudfront.net/masterofeternity_gamepedia_en/4/47/EnhUSAssaulticon.png?version=8d413a91b3747106c38630ebcdbe8fa9"
                           },
@@ -213,7 +213,6 @@ bot.on('message',  message => {
                       channel.send({
                         embed: {
                           color:9871541,
-                          description: "S2 exp is not updated. S3 exp does not tally with Nexon ones.",
                           fields: [
                             {
                               "name": "US Mini-Mini",
