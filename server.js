@@ -193,7 +193,7 @@ bot.on('message',  message => {
                             "url": "https://d1u5p3l4wpay3k.cloudfront.net/masterofeternity_gamepedia_en/4/47/EnhUSAssaulticon.png?version=8d413a91b3747106c38630ebcdbe8fa9"
                           },
                           author: {
-                            "name": `${message.author.username}'s ${suitGrade} suit`
+                            "name": `${message.author.username}'s ${suitGrade.toUpperCase()} suit`
                           },
                           fields: [
                             {
