@@ -168,8 +168,8 @@ bot.on('message',  message => {
                 break;
 
             case 'exp':
-                let [suitGrade;, suitLvl, suitExp] = args;
-                var suitGradeLvl = suitGrade + " " + suitLvl;
+                let [suitGrade, suitLvl, suitExp] = args;
+                var suitGradeLvl = suitGrade.toUpperCase() + " " + suitLvl;
 
                 var parser = parse({delimiter: ','}, function (err, data) {
                     data.forEach(function(line) {
