@@ -145,12 +145,16 @@ bot.on('message',  message => {
                         "value": "Shows this help message to you."
                       },
                       {
-                        "name": "ping",
-                        "value": "Checks if I'm alive or not."
-                      },
-                      {
                         "name": "about",
                         "value": "Some information about me."
+                      },
+                      {
+                        "name": "awaken",
+                        "value": "Watch me awaken again and again and again and... :flushed:"
+                      },
+                      {
+                        "name": "boobs",
+                        "value": "Vital stats for all pixies on Asgard."
                       },
                       {
                         "name": "episode",
@@ -161,8 +165,8 @@ bot.on('message',  message => {
                         "value": "Hitting you with Admiral-Freyja-approved jokes."
                       },
                       {
-                        "name": "awaken",
-                        "value": "Watch me awaken again and again and again and... :flushed:"
+                        "name": "ping",
+                        "value": "Checks if I'm alive or not."
                       },
                       {
                         "name": "exp <Suit Grade> <Suit Level> <Suit Exp>",
