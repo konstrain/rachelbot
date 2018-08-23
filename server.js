@@ -19,6 +19,14 @@ bot.on('ready', (evt) => {
   console.error(e);
 });
 
+var myLines = ['You calling me a joke poke, captain? Not funny...',
+'Ouch, stop that right now!',
+'Captain, I\'m already married.',
+'I WAS joking, why don\'t you pick other pixies to poke?',
+'I woke to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
+
+var show = myLines[Math.floor(Math.random() * myLines.length)];
+
 const url = "https://icanhazdadjoke.com/slack";
 
 const randomizeJoke = (channel) => {
@@ -85,7 +93,7 @@ bot.on('message',  message => {
                 channel.send(`Don\'t ping me, captain. I\'d prefer that you ${auth.prefix}poke me... :flushed: `);
                 break;
             case 'poke':
-                channel.send('You calling me a joke poke, captain? Not funny...');
+                channel.send(show);
                 break;
             case 'about':
                 channel.send({
