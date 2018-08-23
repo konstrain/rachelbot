@@ -93,7 +93,7 @@ bot.on('message',  message => {
                 channel.send(`Don\'t ping me, captain. I\'d prefer that you ${auth.prefix}poke me... :flushed: `);
                 break;
             case 'poke':
-                channel.send(show);
+                channel.send(myLines[Math.floor(Math.random() * myLines.length)]);
                 break;
             case 'about':
                 channel.send({
