@@ -21,11 +21,11 @@ bot.on('ready', (evt) => {
 
 var myLines = ['You calling me a joke poke, captain? Not funny...',
 'Ouch, stop that right now!',
-'Captain, I\'m already married.',
-'I WAS joking, why don\'t you pick other pixies to poke?',
-'I woke to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
+'Captain, I\'m married to @konstrain#8200. Quit poking me.',
+'If you didn\'t notice, I WAS JOKING! Now, why don\'t you pick other pixies to poke?',
+'I woke up to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
 
-var show = myLines[Math.floor(Math.random() * myLines.length)];
+//var show = myLines[Math.floor(Math.random() * myLines.length)];
 
 const url = "https://icanhazdadjoke.com/slack";
 
@@ -256,6 +256,125 @@ bot.on('message',  message => {
 
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
 
+                break;
+            case 'boobs':
+            channel.send({
+              embed: {
+                color:7154121,
+                fields: [
+                  {
+                    "name": "Leahs",
+                    "value": "87B / 61W / 87H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Puris",
+                    "value": "84B / 55W / 83H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Jeanie",
+                    "value": "86B / 61W / 90H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Labi",
+                    "value": "87B / 57W / 87H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Emily",
+                    "value": "73B / 51W / 78H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Erial",
+                    "value": "86B / 59W / 88H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Ophelia",
+                    "value": "95B / 64W / 93H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Naiz",
+                    "value": "89B / 62W / 89H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Rachel",
+                    "value": "75B / 60W / 85H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Florence",
+                    "value": "89B / 62W / 91H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Karu",
+                    "value": "73B / 53W / 78H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Kana",
+                    "value": "90B / 63W / 91H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Lacis",
+                    "value": "86B / 60W / 88H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Lita",
+                    "value": "79B / 56W / 79H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Maiyo",
+                    "value": "98B / 64W / 94H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Yulia",
+                    "value": "74B / 51W / 78H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Madi",
+                    "value": "87B / 62W / 92H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Devi",
+                    "value": "95B / 62W / 90H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Cubi",
+                    "value": "74B / 49W / 80H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Archi",
+                    "value": "81B / 61W / 85H",
+                    "inline": true
+                  },
+                  {
+                    "name": "April",
+                    "value": "74B / 55W / 79H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Anna",
+                    "value": "87B / 62W / 90H",
+                    "inline": true
+                  }
+                ]
+              }
+            });
                 break;
             default:
                 channel.send(`I don\'t understand that command, captain. Seek ${auth.prefix}help`);
