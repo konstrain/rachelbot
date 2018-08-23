@@ -221,6 +221,11 @@ bot.on('message',  message => {
                       channel.send({
                         embed: {
                           color:9871541,
+                          title: `Level: ${suitLvl}`,
+                          description: "```Check how much experience your suit needs to reach max. ```",
+                          thumbnail: {
+                            "url": "https://d1u5p3l4wpay3k.cloudfront.net/masterofeternity_gamepedia_en/4/47/EnhUSAssaulticon.png?version=8d413a91b3747106c38630ebcdbe8fa9"
+                          },
                           fields: [
                             {
                               "name": "US Mini-Mini",
@@ -255,12 +260,16 @@ bot.on('message',  message => {
                 fs.createReadStream(inputFile).pipe(parser);
 
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
-
                 break;
             case 'boobs':
             channel.send({
               embed: {
                 color:7154121,
+                title: "Vital stats for pixies on Asgard",
+                description: "```See who's big or otherwise. Don't be shy now... ```",
+                thumbnail: {
+                  "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
+                },
                 fields: [
                   {
                     "name": "Leahs",
