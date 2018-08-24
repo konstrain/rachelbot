@@ -184,8 +184,8 @@ bot.on('message',  message => {
                         "value": `Check how much exp needed to max. Example, r!exp US 10 50213`
                       },
                       {
-                        "name": "love"
-                        "value": "Find out who's my eternal lover!"
+                        "name": "love",
+                        "value": "Find out who is my eternal lover!"
                       }
                       ]
                   }
