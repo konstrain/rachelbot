@@ -405,7 +405,7 @@ bot.on('message',  message => {
             });
                 break;
               case "love":
-              channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.")
+              channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.");
                 break;
             default:
                 channel.send(myWrongHelpLines[Math.floor(Math.random() * myWrongHelpLines.length)]);
