@@ -68,20 +68,21 @@ bot.on('message',  message => {
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
   console.log(message.author.username);
+
+    if ((text === 'r!joke') || (text === 'r!jokes')){
+      message.react('😄');
+    }
+
+    if (message.isMentioned(bot.user)) {
+    message.reply('message here');
+    }
   
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
         //var args = text.substring(2).split(' ');
         //var cmd = args[0].toLowerCase();
         var args = text.slice(auth.prefix.length).trim().split(/ +/g);
         var cmd = args.shift().toLowerCase();
-      
-        if ((text === 'r!joke') || (text === 'r!jokes')){
-            message.react('😄');
-        }
-       
-        if (message.isMentioned(bot.user)) {
-          message.reply('message here');
-      }
+        
         //args = args.splice(1);
         switch(cmd) {
             // !joke
