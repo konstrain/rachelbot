@@ -67,14 +67,15 @@ bot.on('message',  message => {
   
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
+  if(message.author.username == "<@350550564527931392>")
+  {
+    channel.send('whut');
+  }
+
   console.log(message.author.username);
 
     if ((text === 'r!joke') || (text === 'r!jokes')){
       message.react('😄');
-    }
-
-    if (message.isMentioned(client.users.get('<@454557102749253632>'))) {
-      message.reply('hey there honey.');
     }
 
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
