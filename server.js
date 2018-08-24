@@ -65,7 +65,8 @@ bot.on('message',  message => {
   var text = message.content;
   var channel = message.channel;
   
-  if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
+  //if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
+  if (message.author.bot || message.channel.type == 'dm') return;
 
   if(message.author.username == "<@350550564527931392>")
   {
