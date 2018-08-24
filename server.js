@@ -147,11 +147,13 @@ bot.on('message',  message => {
                     fields: [
                       {
                         "name": "help",
-                        "value": "Shows this help message to you."
+                        "value": "Shows this help message to you.",
+                        "inline": true
                       },
                       {
                         "name": "about",
-                        "value": "Some information about me."
+                        "value": "Some information about me.",
+                        "inline": true
                       },
                       {
                         "name": "awaken",
@@ -159,24 +161,32 @@ bot.on('message',  message => {
                       },
                       {
                         "name": "boobs",
-                        "value": "Vital stats for all pixies on Asgard."
+                        "value": "Vital stats for all pixies on Asgard.",
+                        "inline": true
                       },
                       {
                         "name": "episode",
-                        "value": "How to clear my episodes."
+                        "value": "How to clear my episodes.",
+                        "inline": true
                       },
                       {
                         "name": "joke / jokes",
-                        "value": "Hitting you with Admiral-Freyja-approved jokes."
+                        "value": "Hitting you with Admiral-Freyja-approved jokes.",
+                        "inline": true
                       },
                       {
                         "name": "ping",
-                        "value": "Checks if I'm alive or not."
+                        "value": "Checks if I'm alive or not.",
+                        "inline": true
                       },
                       {
                         "name": "exp <Suit Grade> <Suit Level> <Suit Exp>",
                         "value": `Check how much exp needed to max. Example, r!exp US 10 50213`
-                      }                      
+                      },
+                      {
+                        "name": "love"
+                        "value": "Find out who's my eternal lover!"
+                      }
                       ]
                   }
                 });
@@ -393,6 +403,9 @@ bot.on('message',  message => {
                 ]
               }
             });
+                break;
+              case "love":
+              channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.")
                 break;
             default:
                 channel.send(myWrongHelpLines[Math.floor(Math.random() * myWrongHelpLines.length)]);
