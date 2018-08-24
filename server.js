@@ -25,6 +25,12 @@ var myLines = ['You calling me a joke poke, captain? Not funny...',
 'If you didn\'t notice, I WAS JOKING! Now, why don\'t you pick other pixies to poke?',
 'I woke up to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
 
+var myWrongHelpLines = [`I don\'t understand that command, captain. Seek ${auth.prefix}help`,
+`Captain, did you made a typo? ${auth.prefix}help for better clarity.`,
+`See? Alcohol and drugs are a problem. You need ${auth.prefix}help`,
+`I don\'t understand you anymore. Go for ${auth.prefix}help`
+]
+
 //var show = myLines[Math.floor(Math.random() * myLines.length)];
 
 const url = "https://icanhazdadjoke.com/slack";
@@ -389,7 +395,7 @@ bot.on('message',  message => {
             });
                 break;
             default:
-                channel.send(`I don\'t understand that command, captain. Seek ${auth.prefix}help`);
+                channel.send(myWrongHelpLines[Math.floor(Math.random() * myWrongHelpLines.length)]);
                 break;
             // Just add any case commands if you want to..
          }
