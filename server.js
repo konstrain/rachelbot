@@ -73,16 +73,16 @@ bot.on('message',  message => {
       message.react('😄');
     }
 
-    if (message.isMentioned(bot.user)) {
-    message.reply('message here');
+    if (message.isMentioned(client.users.get('<@454557102749253632>'))) {
+      message.reply('hey there honey.');
     }
-  
+
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
         //var args = text.substring(2).split(' ');
         //var cmd = args[0].toLowerCase();
         var args = text.slice(auth.prefix.length).trim().split(/ +/g);
         var cmd = args.shift().toLowerCase();
-        
+
         //args = args.splice(1);
         switch(cmd) {
             // !joke
