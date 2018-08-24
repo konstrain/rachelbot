@@ -21,7 +21,7 @@ bot.on('ready', (evt) => {
 
 var myLines = ['You calling me a joke poke, captain? Not funny...',
 'Ouch, stop that right now!',
-'Captain, I\'m married to @konstrain#8200. Quit poking me.',
+'Captain, I\'m married to <@350550564527931392>. Quit poking me.',
 'If you didn\'t notice, I WAS JOKING! Now, why don\'t you pick other pixies to poke?',
 'I woke up to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
 
