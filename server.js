@@ -79,9 +79,9 @@ bot.on('message',  message => {
             message.react('😄');
         }
        
-        if (message.author.username == '<@350550564527931392>') {
-          channel.send("hey my darling captain <@350550564527931392>");
-        }
+        if (message.isMentioned(bot.user)) {
+          message.reply('message here');
+      }
         //args = args.splice(1);
         switch(cmd) {
             // !joke
