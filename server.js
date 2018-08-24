@@ -65,7 +65,6 @@ bot.on('message',  message => {
   var text = message.content;
   var channel = message.channel;
   
-
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
   console.log(message.author.username);
@@ -78,8 +77,11 @@ bot.on('message',  message => {
       
         if ((text === 'r!joke') || (text === 'r!jokes')){
             message.react('😄');
-        }        
+        }
        
+        if (message.author.username == '<@350550564527931392>') {
+          channel.send("hey my darling captain <@350550564527931392>");
+        }
         //args = args.splice(1);
         switch(cmd) {
             // !joke
