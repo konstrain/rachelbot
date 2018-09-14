@@ -91,7 +91,7 @@ bot.on('message',  message => {
             if(message.author.id === '350550564527931392') {
                 channel.send((message.content.replace('r!say ','')));
             } else {
-              channel.send('Sorry Captain, you\'re not my hubby, <@350550564527931392>.')
+              channel.send(`'Sorry Captain ${message.author.username}, you\'re not my hubby.`)
             }
                 break;
             case 'joke':
