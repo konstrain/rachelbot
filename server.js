@@ -72,9 +72,14 @@ bot.on('message',  message => {
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
   console.log(message.author.username);
+  console.log(message.author);
 
     if ((text === 'r!joke') || (text === 'r!jokes')){
       message.react('😄');
+    }
+
+    if(message.author === '350550564527931392'){
+    
     }
 
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
@@ -333,7 +338,7 @@ bot.on('message',  message => {
                     "inline": true
                   },
                   {
-                    "name": "Rachel",
+                    "name": "Rachel (that\'s me!)",
                     "value": "75B / 60W / 85H",
                     "inline": true
                   },
