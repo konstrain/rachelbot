@@ -72,7 +72,7 @@ bot.on('message',  message => {
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
   console.log(message.author.username);
-  console.log(message.author.id);
+  console.log(message.client);
 
     if ((text === 'r!joke') || (text === 'r!jokes')){
       message.react('😄');
