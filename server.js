@@ -78,7 +78,7 @@ bot.on('message',  message => {
       message.react('😄');
     }
 
-    if((message.author.id === '350550564527931392') && (text =='r!speak')){
+    if((message.author.id === '350550564527931392') && (text == 'r!speak')){
       channel.send('hi');
     }
 
@@ -92,8 +92,11 @@ bot.on('message',  message => {
         switch(cmd) {
             // !joke
             case 'speak':
-                let [talk] = args;
-                channel.send(talk);
+            if(message.author.id === '350550564527931392') {
+                channel.send((message.content.replace('r!speak ','')));
+            } else {
+              channel.send('Sorry Captain, you\'re not <@350550564527931392>.')
+            }
                 break;
             case 'joke':
                 randomizeJoke(channel);
