@@ -72,14 +72,14 @@ bot.on('message',  message => {
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
   console.log(message.author.username);
-  console.log(message.author);
+  console.log(message.author.id);
 
     if ((text === 'r!joke') || (text === 'r!jokes')){
       message.react('😄');
     }
 
-    if(message.author === '350550564527931392'){
-    
+    if(message.author.id === '350550564527931392') && (text =='r!speak'){
+      channel.send('hi');
     }
 
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
