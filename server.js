@@ -46,7 +46,7 @@ const randomizeJoke = (channel) => {
           res.on("end", () => {
             body = JSON.parse(body);
 
-            console.log(`Result: ${body.attachments[0].fallback}`); // for debug purposes
+            //console.log(`Result: ${body.attachments[0].fallback}`); // for debug purposes
             channel.send({ 
               embed: {
                 color:3447003,
@@ -72,14 +72,10 @@ bot.on('message',  message => {
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
   console.log(message.author.username);
-  console.log(message.client);
+  console.log(message.client.id);
 
     if ((text === 'r!joke') || (text === 'r!jokes')){
       message.react('😄');
-    }
-
-    if((message.author.id === '350550564527931392') && (text == 'r!speak')){
-      channel.send('hi');
     }
 
     if (text.substring(0, 2).toLowerCase() == auth.prefix) {
@@ -91,11 +87,11 @@ bot.on('message',  message => {
         //args = args.splice(1);
         switch(cmd) {
             // !joke
-            case 'speak':
+            case 'say':
             if(message.author.id === '350550564527931392') {
                 channel.send((message.content.replace('r!speak ','')));
             } else {
-              channel.send('Sorry Captain, you\'re not <@350550564527931392>.')
+              channel.send('Sorry Captain, you\'re not my hubby, <@350550564527931392>.')
             }
                 break;
             case 'joke':
