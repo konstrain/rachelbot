@@ -78,7 +78,7 @@ bot.on('message',  message => {
       message.react('😄');
     }
 
-    if(message.author.id === '350550564527931392') && (text =='r!speak'){
+    if((message.author.id === '350550564527931392') && (text =='r!speak')){
       channel.send('hi');
     }
 
