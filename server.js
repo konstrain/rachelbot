@@ -19,10 +19,8 @@ bot.on('ready', (evt) => {
   console.error(e);
 });
 
-var myLines = ['You calling me a joke poke, captain? Not funny...',
-'Ouch, stop that right now!',
-'Captain, I\'m married to <@350550564527931392>. Quit poking me.',
-'If you didn\'t notice, I WAS JOKING! Now, why don\'t you pick other pixies to poke?',
+var myLines = ['You calling me a joke poke, captain? Not funny...', 'Ouch, stop that right now!', 'Okay, can you just ping me instead?', 'Now that\'s pretty rude, Captain',
+'Captain, I\'m married to <@350550564527931392>. Quit poking me.', 'If you didn\'t notice, I WAS JOKING! Now, why don\'t you pick other pixies to poke?',
 'I woke up to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
 
 var myWrongHelpLines = [`I don\'t understand that command, captain. Seek ${auth.prefix}help`,
@@ -88,6 +86,10 @@ bot.on('message',  message => {
         //args = args.splice(1);
         switch(cmd) {
             // !joke
+            case 'speak':
+                let [talk] = args;
+                channel.send(talk);
+                break;
             case 'joke':
                 randomizeJoke(channel);
                 break;
