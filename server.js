@@ -23,6 +23,9 @@ var myLines = ['You calling me a joke poke, captain? Not funny...', 'Ouch, stop 
 'Captain, I\'m married to <@350550564527931392>. Quit poking me.', 'If you didn\'t notice, I WAS JOKING! Now, why don\'t you pick other pixies to poke?',
 'I woke up to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
 
+var myOwnLines = ['You can poke me anytime, darling Captain.','Oh Captain, that feels soo good. Don\'t stop :kissing_closed_eyes:','Ouch, that hurts a little. Be gentle..','**MOANS**',
+'Am I supposed to feel this good?','mmmm, ok Captain darling, my turn to poke you.','**Pokes** you back!'];
+
 var myWrongHelpLines = [`I don\'t understand that command, captain. Seek ${auth.prefix}help`,
 `Captain, did you made a typo? ${auth.prefix}help for better clarity.`,
 `See? Alcohol and drugs are a problem. You need ${auth.prefix}help`,
@@ -104,7 +107,11 @@ bot.on('message',  message => {
                 channel.send(`Don\'t ping me, captain. I\'d prefer that you ${auth.prefix}poke me... :flushed: `);
                 break;
             case 'poke':
-                channel.send(myLines[Math.floor(Math.random() * myLines.length)]);
+                if(message.author.id === '350550564527931392') {
+                    channel.send(myOwnLines[Math.floor(Math.random() * myOwnLines.length)]);
+                } else {
+                    channel.send(myLines[Math.floor(Math.random() * myLines.length)]);
+                }
                 break;
             case 'about':
                 channel.send({
@@ -411,7 +418,11 @@ bot.on('message',  message => {
             });
                 break;
               case "love":
-              channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.");
+                if(message.author.id === '350550564527931392') {
+                    channel.send('Do you even need to ask? It\'s definitely you!');
+                } else {
+                    channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.");
+                }
                 break;
             default:
                 channel.send(myWrongHelpLines[Math.floor(Math.random() * myWrongHelpLines.length)]);
