@@ -13,7 +13,7 @@ const auth = require('./auth.json');
 
 var bot = new Discord.Client();
 bot.on('ready', (evt) => {
-    bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | ${bot.guilds.member_count}`);
+    bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | ${guild.members.filter(member => !member.user.bot).size;}`);
     console.log('Connected');
 }).on('error', (e) => {
   console.error(e);
