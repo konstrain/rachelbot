@@ -126,7 +126,8 @@ bot.on('message',  message => {
                       {"name":"Height","value":"162cm"},
                       {"name":"Vital stats","value":"75B | 60W | 85H"},
                       {"name":"Personality","value":"Normally quiet and calm, but will randomly add hilarious quips."},
-                      {"name":"Hobby & Speciality","value":"World chess champion."}                      
+                      {"name":"Hobby & Speciality","value":"World chess champion."},
+                      {"name":"Married to", "value":"<@350550564527931392>"}
                     ]
                   }
                 });
