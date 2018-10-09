@@ -413,6 +413,11 @@ bot.on('message',  message => {
                     "name": "Anna",
                     "value": "87B / 62W / 90H",
                     "inline": true
+                  },
+                  {
+                    "name": "Irene",
+                    "value": "101B / 66W / 98H",
+                    "inline": true
                   }
                 ]
               }
