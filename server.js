@@ -306,117 +306,122 @@ bot.on('message',  message => {
                 fields: [
                   {
                     "name": "Leahs",
-                    "value": "87B / 61W / 87H",
+                    "value": "164CM | 87B / 61W / 87H",
                     "inline": true
                   },
                   {
                     "name": "Puris",
-                    "value": "84B / 55W / 83H",
+                    "value": "163CM | 84B / 55W / 83H",
                     "inline": true
                   },
                   {
                     "name": "Jeanie",
-                    "value": "86B / 61W / 90H",
+                    "value": "166CM | 86B / 61W / 90H",
                     "inline": true
                   },
                   {
                     "name": "Labi",
-                    "value": "87B / 57W / 87H",
+                    "value": "173CM | 87B / 57W / 87H",
                     "inline": true
                   },
                   {
                     "name": "Emily",
-                    "value": "73B / 51W / 78H",
+                    "value": "151CM | 73B / 51W / 78H",
                     "inline": true
                   },
                   {
                     "name": "Erial",
-                    "value": "86B / 59W / 88H",
+                    "value": "164CM | 86B / 59W / 88H",
                     "inline": true
                   },
                   {
                     "name": "Ophelia",
-                    "value": "95B / 64W / 93H",
+                    "value": "172CM | 95B / 64W / 93H",
                     "inline": true
                   },
                   {
                     "name": "Naiz",
-                    "value": "89B / 62W / 89H",
+                    "value": "170CM | 89B / 62W / 89H",
                     "inline": true
                   },
                   {
                     "name": "Rachel (that\'s me!)",
-                    "value": "75B / 60W / 85H",
+                    "value": "162CM | 75B / 60W / 85H",
                     "inline": true
                   },
                   {
                     "name": "Florence",
-                    "value": "89B / 62W / 91H",
+                    "value": "169CM | 89B / 62W / 91H",
                     "inline": true
                   },
                   {
                     "name": "Karu",
-                    "value": "73B / 53W / 78H",
+                    "value": "147CM | 73B / 53W / 78H",
                     "inline": true
                   },
                   {
                     "name": "Kana",
-                    "value": "90B / 63W / 91H",
+                    "value": "171CM | 90B / 63W / 91H",
                     "inline": true
                   },
                   {
                     "name": "Lacis",
-                    "value": "86B / 60W / 88H",
+                    "value": "165CM | 86B / 60W / 88H",
                     "inline": true
                   },
                   {
                     "name": "Lita",
-                    "value": "79B / 56W / 79H",
+                    "value": "148CM | 79B / 56W / 79H",
                     "inline": true
                   },
                   {
                     "name": "Maiyo",
-                    "value": "98B / 64W / 94H",
+                    "value": "172CM | 98B / 64W / 94H",
                     "inline": true
                   },
                   {
                     "name": "Yulia",
-                    "value": "74B / 51W / 78H",
+                    "value": "150CM | 74B / 51W / 78H",
                     "inline": true
                   },
                   {
                     "name": "Madi",
-                    "value": "87B / 62W / 92H",
+                    "value": "169CM | 87B / 62W / 92H",
                     "inline": true
                   },
                   {
                     "name": "Devi",
-                    "value": "95B / 62W / 90H",
+                    "value": "178CM | 95B / 62W / 90H",
                     "inline": true
                   },
                   {
                     "name": "Cubi",
-                    "value": "74B / 49W / 80H",
+                    "value": "150CM | 74B / 49W / 80H",
                     "inline": true
                   },
                   {
                     "name": "Archi",
-                    "value": "81B / 61W / 85H",
+                    "value": "167CM | 81B / 61W / 85H",
                     "inline": true
                   },
                   {
                     "name": "April",
-                    "value": "74B / 55W / 79H",
+                    "value": "154CM | 74B / 55W / 79H",
                     "inline": true
                   },
                   {
                     "name": "Anna",
-                    "value": "87B / 62W / 90H",
+                    "value": "171CM | 87B / 62W / 90H",
                     "inline": true
                   },
                   {
                     "name": "Irene",
-                    "value": "101B / 66W / 98H",
+                    "value": "175CM | 101B / 66W / 98H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Miku",
+                    "value": "158CM | ??B / ??W / ??H",
                     "inline": true
                   }
                 ]
