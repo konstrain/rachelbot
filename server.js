@@ -299,7 +299,7 @@ bot.on('message',  message => {
               embed: {
                 color:7154121,
                 title: "Vital stats for pixies on Asgard",
-                description: "```See who's big or otherwise. Don't be shy now... ```",
+                description: "```See who's big or otherwise. Excited yet, Captain? ```",
                 thumbnail: {
                   "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
                 },
@@ -417,6 +417,11 @@ bot.on('message',  message => {
                   {
                     "name": "Irene",
                     "value": "175CM | 101B / 66W / 98H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Eres",
+                    "value": "165CM | 88B / 59W / 85H",
                     "inline": true
                   },
                   {
