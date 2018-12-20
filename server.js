@@ -301,11 +301,9 @@ bot.on('message',  message => {
              channel.send(pixieName);
           if(pixieName === 'leahs'){
             channel.send('Leahs\' boobs is 87B');
-          }
-          if(pixieName === 'puris'){
+          } else if(pixieName === 'puris'){
             channel.send('Puris\' boobs is 84B');
-          }
-          if(pixieName === ''){
+          } else {
             channel.send({
               embed: {
                 color:7154121,
