@@ -86,6 +86,8 @@ bot.on('message',  message => {
         //var cmd = args[0].toLowerCase();
         var args = text.slice(auth.prefix.length).trim().split(/ +/g);
         var cmd = args.shift().toLowerCase();
+     
+     var pixieName = "";
 
         //args = args.splice(1);
         switch(cmd) {
@@ -296,7 +298,7 @@ bot.on('message',  message => {
                 break;
             case 'boobs':
              let [pixie] = args;
-             let pixieName = pixie.toLowerCase();
+             pixieName = pixie.toLowerCase();
           
              channel.send(pixieName);
           channel.send(pixie);
