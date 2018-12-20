@@ -315,7 +315,7 @@ bot.on('message',  message => {
               			});
             		break;
             		default:
-            	
+            	 
             	
             channel.send({
               embed: {
@@ -454,7 +454,8 @@ bot.on('message',  message => {
                 ]
               }
             });
-            }
+            break;
+             }
                 break;
               case "love":
                 if(message.author.id === '350550564527931392') {
