@@ -299,11 +299,16 @@ bot.on('message',  message => {
              let pixieName = pixie.shift().toLowerCase();
           
              channel.send(pixieName);
+          channel.send(pixie);
+          
           if(pixieName === 'leahs'){
             channel.send('Leahs\' boobs is 87B');
-          } else if(pixieName === 'puris'){
+          }
+          if(pixieName === 'puris'){
             channel.send('Puris\' boobs is 84B');
-          } else {
+          } 
+          
+          if(pixieName === ''){
             channel.send({
               embed: {
                 color:7154121,
