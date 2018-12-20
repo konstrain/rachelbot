@@ -296,6 +296,8 @@ bot.on('message',  message => {
                 break;
             case 'boobs':
             	let pixieName = args;
+          
+          channel.send([`${pixieName}`]);
             	
             	if(pixieName != "") { // if pixie is named, then show only that pixie's vital stats
             		if(pixieName === "Leahs"){
