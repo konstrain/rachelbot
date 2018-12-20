@@ -295,7 +295,9 @@ bot.on('message',  message => {
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
             case 'boobs':
-             let [pixieName] = args;
+             let [pixie] = args;
+             let pixieName = pixie.toLowerCase();
+          
              channel.send(pixieName);
           if(pixieName === 'leahs'){
             channel.send('Leahs\' boobs is 87B');
@@ -303,7 +305,7 @@ bot.on('message',  message => {
           if(pixieName === 'puris'){
             channel.send('Puris\' boobs is 84B');
           }
-            /*
+          if(pixieName === ''){
             channel.send({
               embed: {
                 color:7154121,
@@ -440,7 +442,9 @@ bot.on('message',  message => {
                   }
                 ]
               }
-            });*/
+            });
+            
+           }
           
                 break;
               case "love":
