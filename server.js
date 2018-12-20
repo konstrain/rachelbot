@@ -295,6 +295,20 @@ bot.on('message',  message => {
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
             case 'boobs':
+             let pixieName = args.toLowerCase();
+             
+          switch(pixieName){
+           case 'leahs':
+            channel.send('Leahs\' boobs is 87B');
+            break;
+           case 'puris':
+            channel.send('Puris\' boobs is 84B');
+            break;
+           default:
+            channel.send('Show all boobs!');
+            break;
+          }
+            /*
             channel.send({
               embed: {
                 color:7154121,
@@ -431,7 +445,8 @@ bot.on('message',  message => {
                   }
                 ]
               }
-            });
+            });*/
+          
                 break;
               case "love":
                 if(message.author.id === '350550564527931392') {
