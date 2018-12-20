@@ -295,12 +295,12 @@ bot.on('message',  message => {
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
             case 'boobs':
-            	let pixieName = args;
-          
-          channel.send([`${pixieName}`]);
+            	let pixieName = args.toLowerCase();
             	
-            	if(pixieName != "") { // if pixie is named, then show only that pixie's vital stats
-            		if(pixieName === "Leahs"){
+            	channel.send(`[${pixieName}]`);
+            	//maybe should use switch case
+            	switch(pixieName){
+            		case 'leahs':
             			channel.send({
               				embed: {
               				color:7154121,
@@ -313,9 +313,10 @@ bot.on('message',  message => {
               				 "inline": true
               				}]}
               			});
-            		}
-            	} else {
-            	// if no pixie name are specified, then show all pixies vital stats
+            		break;
+            		default:
+            	
+            	
             channel.send({
               embed: {
                 color:7154121,
@@ -453,8 +454,7 @@ bot.on('message',  message => {
                 ]
               }
             });
-            
-            } ////////end if
+            }
                 break;
               case "love":
                 if(message.author.id === '350550564527931392') {
