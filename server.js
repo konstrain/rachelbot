@@ -296,7 +296,7 @@ bot.on('message',  message => {
                 break;
             case 'boobs':
              let [pixie] = args;
-             let pixieName = pixie.shift().toLowerCase();
+             let pixieName = pixie.toLowerCase();
           
              channel.send(pixieName);
           channel.send(pixie);
