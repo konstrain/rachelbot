@@ -295,7 +295,7 @@ bot.on('message',  message => {
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
             case 'boobs':
-             let pixieName = args.toLowerCase();
+             let pixieName = args;
              
           if(pixieName === 'leahs'){
             channel.send('Leahs\' boobs is 87B');
