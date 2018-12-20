@@ -297,27 +297,9 @@ bot.on('message',  message => {
             case 'boobs':
             	let pixieName = args.toLowerCase();
             	
-            	channel.send(`[${pixieName}]`);
-            	//maybe should use switch case
-            	switch(pixieName){
-            		case 'leahs':
-            			channel.send({
-              				embed: {
-              				color:7154121,
-              				title: "Vital stats for pixies on Asgard",
-              				description: "```See who's big or otherwise. Excited yet, Captain? ```",
-              				thumbnail: {"url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"},
-              				fields: [{
-              				 "name": "Leahs",
-              				 "value": "164CM | 87B / 61W / 87H",
-              				 "inline": true
-              				}]}
-              			});
-            		break;
-            		default:
-            	 break;
-             }
-            	
+            	channel.send(pixieName);
+            	channel.send(args);
+          
             channel.send({
               embed: {
                 color:7154121,
