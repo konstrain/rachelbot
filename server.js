@@ -295,6 +295,25 @@ bot.on('message',  message => {
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
             case 'boobs':
+            	let pixieName = args;
+            	
+            	if(pixieName != "") { // if pixie is named, then show only that pixie's vital stats
+            		if(pixieName == "Leahs"){
+            			channel.send({
+              				embed: {
+              				color:7154121,
+              				title: "Vital stats for pixies on Asgard",
+              				description: "```See who's big or otherwise. Excited yet, Captain? ```",
+              				thumbnail: {"url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"},
+              				fields: [{
+              				 "name": "Leahs",
+              				 "value": "164CM | 87B / 61W / 87H",
+              				 "inline": true
+              				}]}
+              			});
+            		}
+            	} else {
+            	// if no pixie name are specified, then show all pixies vital stats
             channel.send({
               embed: {
                 color:7154121,
@@ -432,6 +451,8 @@ bot.on('message',  message => {
                 ]
               }
             });
+            
+            } ////////end if
                 break;
               case "love":
                 if(message.author.id === '350550564527931392') {
