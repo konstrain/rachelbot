@@ -295,11 +295,6 @@ bot.on('message',  message => {
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
             case 'boobs':
-            	let pixieName = args.toLowerCase();
-            	
-            	channel.send(pixieName);
-            	channel.send(args);
-          
             channel.send({
               embed: {
                 color:7154121,
@@ -437,7 +432,6 @@ bot.on('message',  message => {
                 ]
               }
             });
-          
                 break;
               case "love":
                 if(message.author.id === '350550564527931392') {
