@@ -311,21 +311,15 @@ bot.on('message',  message => {
                       };
                       
                       if(pixieName===pixies.name) {
-                      		 channel.send({
+                        channel.send({
               				embed: {
                 				color:7154121,
-               				 title: `${pixies.name}, Asgard`,
-                				description: "```Vital stats for ${pixies.name}. Excited yet, Captain? ```",
+               				 title: `Vital stats for ${pixies.name}. Excited yet, Captain?`,
+                				description: `${pixies.height} | ${pixies.bust} / ${pixies.waist} / ${pixies.hips}`,
                				 thumbnail: {
                  				 "url": pixies.avatar
-               				 },
-               				 fields: [
-               				   {
-                				 "name": pixies.name,
-               				     "value": `${pixies.height} | ${pixies.bust} / ${pixies.waist} / ${pixies.hips}`,
-               				     "inline": true
-                				}
-                				]}
+               				 }
+               				 }
                 			});
                    	  }
                     
