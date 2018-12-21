@@ -123,7 +123,7 @@ bot.on('message',  message => {
                       {"name":"Voice artist","value":"Kaneko Sayaka"},
                       {"name":"Favourite quote","value":"I don't have a problem with you."},
                       {"name":"Class","value":"Sniper"},
-                      {"name":"Preferred suit","value":"Pauler"},
+                      {"name":"Preferred suit","value":"~~Pauler~~ Atropos, really"},
                       {"name":"Height","value":"162cm"},
                       {"name":"Vital stats","value":"75B | 60W | 85H"},
                       {"name":"Personality","value":"Normally quiet and calm, but will randomly add hilarious quips."},
@@ -295,7 +295,45 @@ bot.on('message',  message => {
 
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
-            case 'boobs':
+            case 'b':
+            	let [pixie] = args;
+                var pixieName = pixie.toUpperCase();
+
+                var parser2 = parse({delimiter: ','}, function (err, data) {
+                    data.forEach(function(line) {
+                      var pixies = { 
+                        "name" : line[0], 
+                        "height" : line[1], 
+                        "bust" : line[2],
+                        "waist" : line [3],
+                        "hips" : line [4]
+                      };
+                      
+                      if(pixieName===pixies.name) {
+                      		 channel.send({
+              				embed: {
+                				color:7154121,
+               				 title: "Vital stats for pixies on Asgard",
+                				description: "```See who's big or otherwise. Excited yet, Captain? ```",
+               				 thumbnail: {
+                 				 "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
+               				 },
+               				 fields: [
+               				   {
+                				 "name": pixies.name,
+               				     "value": `${pixies.height} | ${pixies.bust} / ${pixies.waist} / ${pixies.hips}`,
+               				     "inline": true
+                				}
+                				]}
+                			});
+                   	  }
+                    
+                      })
+                    });
+                    fs.createReadStream(inputFile2).pipe(parser2);
+
+            	break;	
+            case 'boobs':            
             
             channel.send({
               embed: {
