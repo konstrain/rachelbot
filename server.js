@@ -306,17 +306,18 @@ bot.on('message',  message => {
                         "height" : line[1], 
                         "bust" : line[2],
                         "waist" : line [3],
-                        "hips" : line [4]
+                        "hips" : line [4],
+                        "avatar" : line[5]
                       };
                       
                       if(pixieName===pixies.name) {
                       		 channel.send({
               				embed: {
                 				color:7154121,
-               				 title: "Vital stats for pixies on Asgard",
-                				description: "```See who's big or otherwise. Excited yet, Captain? ```",
+               				 title: `${pixies.name}, Asgard`,
+                				description: "```Vital stats for ${pixies.name}. Excited yet, Captain? ```",
                				 thumbnail: {
-                 				 "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
+                 				 "url": pixies.avatar
                				 },
                				 fields: [
                				   {
