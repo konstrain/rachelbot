@@ -302,6 +302,9 @@ bot.on('message',  message => {
           if(pixie!==""){
            channel.send(pixie);
              pixieName = pixie.toLowerCase();
+          } else {
+           channel.send(pixie);
+           pixieName = pixie;
           }
           
           if(pixieName === 'leahs'){
