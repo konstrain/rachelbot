@@ -311,15 +311,36 @@ bot.on('message',  message => {
                       };
                       
                       if(pixieName===pixies.name) {
-                        channel.send({
+                      	channel.send({
               				embed: {
                 				color:7154121,
-               				 title: `Vital stats for ${pixies.name}. Excited yet, Captain?`,
-                				description: `${pixies.height} | ${pixies.bust} / ${pixies.waist} / ${pixies.hips}`,
+               				 title: `Vital stats for ${pixies.name}.`,
+                				description: "```Excited yet, Captain? :wink:```",
                				 thumbnail: {
                  				 "url": pixies.avatar
-               				 }
-               				 }
+               				 },
+               				 fields: [
+               				   {
+                				   "name": "Height",
+               				      "value": pixies.height,
+               				       "inline": true
+                				},
+                				{
+                				    "name": "Bust",
+                				    "value": pixies.bust,
+                				    "inline":true
+                				},
+                				{
+                				    "name": "Waist",
+                				    "value": pixies.waist,
+                				    "inline":true
+                				},
+                				{
+                				    "name": "Hips",
+                				    "value": pixies.hips,
+                				    "inline":true
+                				}
+                				]}
                 			});
                    	  }
                     
