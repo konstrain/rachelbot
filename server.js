@@ -6,6 +6,7 @@ var fs = require('fs');
 var parse = require('csv-parse');
  
 var inputFile='expCalc.csv';
+var inputFile2='vitalStats.csv';
 console.log("Processing CSV file");
 
 const Discord = require('discord.js');
@@ -24,7 +25,7 @@ var myLines = ['You calling me a joke poke, captain? Not funny...', 'Ouch, stop 
 'I woke up to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
 
 var myOwnLines = ['You can poke me anytime, darling Captain.','Oh Captain, that feels soo good. Don\'t stop :kissing_closed_eyes:','Ouch, that hurts a little. Be gentle..','**MOANS**',
-'Am I supposed to feel this good?','mmmm, ok Captain darling, my turn to poke you.','**Pokes** you back!'];
+'Am I supposed to feel this good?','mmmm, ok Captain darling, my turn to poke you.','**Pokes** you back!','I\'m shy, darling.','There\'s people watching, Captain.'];
 
 var myWrongHelpLines = [`I don\'t understand that command, captain. Seek ${auth.prefix}help`,
 `Captain, did you made a typo? ${auth.prefix}help for better clarity.`,
@@ -86,8 +87,6 @@ bot.on('message',  message => {
         //var cmd = args[0].toLowerCase();
         var args = text.slice(auth.prefix.length).trim().split(/ +/g);
         var cmd = args.shift().toLowerCase();
-     
-     var pixieName = "";
 
         //args = args.splice(1);
         switch(cmd) {
@@ -297,25 +296,7 @@ bot.on('message',  message => {
                 //channel.send([`${suitGrade} ${suitLvl} ${suitExp}`])
                 break;
             case 'boobs':
-          channel.send(args);
-             let [pixie] = args;
-          
-          if(pixie!==""){
-           channel.send(pixie);
-             pixieName = pixie.toLowerCase();
-          } else {
-           channel.send(pixie);
-           pixieName = pixie;
-          }
-          
-          if(pixieName === 'leahs'){
-            channel.send('Leahs\' boobs is 87B');
-          }
-          if(pixieName === 'puris'){
-            channel.send('Puris\' boobs is 84B');
-          } 
-          
-          if(pixieName === ''){
+            
             channel.send({
               embed: {
                 color:7154121,
@@ -454,8 +435,6 @@ bot.on('message',  message => {
               }
             });
             
-           }
-          
                 break;
               case "love":
                 if(message.author.id === '350550564527931392') {
