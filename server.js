@@ -323,7 +323,7 @@ bot.on('message',  message => {
                				   {
                 				   "name": "Height",
                				      "value": pixies.height,
-               				       "inline": true
+               				       "inline": false
                 				},
                 				{
                 				    "name": "Bust",
