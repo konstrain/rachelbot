@@ -75,7 +75,7 @@ bot.on('message',  message => {
   if (!text.startsWith(auth.prefix) || message.author.bot || message.channel.type == 'dm') return;
 
   console.log(message.author.username);
-  console.log(message.client.id);
+  //console.log(message.client.id);
 
     if ((text === 'r!joke') || (text === 'r!jokes')){
       message.react('😄');
@@ -299,7 +299,8 @@ bot.on('message',  message => {
             case 'boobs':
              let [pixie] = args;
           
-          if(pixie!=""){
+          if(pixie!==""){
+           channel.send(pixie);
              pixieName = pixie.toLowerCase();
           }
           
