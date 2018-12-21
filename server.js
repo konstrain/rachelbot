@@ -327,7 +327,7 @@ bot.on('message',  message => {
                 				},
                 				{
                 				    "name": "Bust",
-                				    "value": pixies.bust,
+                				    "value": `**${pixies.bust}**,
                 				    "inline":true
                 				},
                 				{
