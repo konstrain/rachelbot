@@ -481,6 +481,11 @@ bot.on('message',  message => {
                     "inline": true
                   },
                   {
+                    "name": "Rody",
+                    "value": "156CM | 75B / 54W / 80H",
+                    "inline": true
+                  },
+                  {
                     "name": "Miku",
                     "value": "158CM | ??B / ??W / ??H",
                     "inline": true
