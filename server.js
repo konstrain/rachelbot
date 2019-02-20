@@ -424,7 +424,15 @@ bot.on('message',  message => {
                     "name": "Lacis",
                     "value": "165CM | 86B / 60W / 88H",
                     "inline": true
-                  },
+                  }
+                ]
+              }
+            });
+            
+            channel.send({
+              embed: {
+                color:7154121,
+                fields: [
                   {
                     "name": "Lita",
                     "value": "148CM | 79B / 56W / 79H",
@@ -459,15 +467,7 @@ bot.on('message',  message => {
                     "name": "Archi",
                     "value": "167CM | 81B / 61W / 85H",
                     "inline": true
-                  }                  
-                ]
-              }
-            });
-            
-            channel.send({
-              embed: {
-                color:7154121,
-                fields: [
+                  } ,
                   {
                     "name": "April",
                     "value": "154CM | 74B / 55W / 79H",
