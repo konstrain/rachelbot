@@ -427,8 +427,18 @@ bot.on('message',  message => {
                   }
                 ]
               }
-              
+            });
+            
+            channel.send({
               embed: {
+                color:7154121,
+                title: "Vital stats for pixies on Asgard",
+                description: "```See who's big or otherwise. Excited yet, Captain? ```",
+                thumbnail: {
+                  "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
+                },
+                fields: [
+            embed: {
                 color:7154121,
                 title: "Vital stats for pixies on Asgard",
                 description: "```See who's big or otherwise. Excited yet, Captain? ```",
@@ -503,7 +513,7 @@ bot.on('message',  message => {
                   }
                 ]
               }
-            });
+              });
             
                 break;
               case "love":
