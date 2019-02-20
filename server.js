@@ -424,28 +424,7 @@ bot.on('message',  message => {
                     "name": "Lacis",
                     "value": "165CM | 86B / 60W / 88H",
                     "inline": true
-                  }
-                ]
-              }
-            });
-            
-            channel.send({
-              embed: {
-                color:7154121,
-                title: "Vital stats for pixies on Asgard",
-                description: "```See who's big or otherwise. Excited yet, Captain? ```",
-                thumbnail: {
-                  "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
-                },
-                fields: [
-            embed: {
-                color:7154121,
-                title: "Vital stats for pixies on Asgard",
-                description: "```See who's big or otherwise. Excited yet, Captain? ```",
-                thumbnail: {
-                  "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
-                },
-                fields: [
+                  },
                   {
                     "name": "Lita",
                     "value": "148CM | 79B / 56W / 79H",
@@ -500,7 +479,20 @@ bot.on('message',  message => {
                     "name": "Eres",
                     "value": "165CM | 88B / 59W / 85H",
                     "inline": true
-                  },
+                  }
+                ]
+              }
+            });
+            
+            channel.send({
+              embed: {
+                color:7154121,
+                title: "Vital stats for pixies on Asgard",
+                description: "```See who's big or otherwise. Excited yet, Captain? ```",
+                thumbnail: {
+                  "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
+                },
+                fields: [
                   {
                     "name": "Rody",
                     "value": "156CM | 75B / 54W / 80H",
@@ -513,7 +505,7 @@ bot.on('message',  message => {
                   }
                 ]
               }
-              });
+            });
             
                 break;
               case "love":
