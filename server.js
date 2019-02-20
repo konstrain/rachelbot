@@ -424,7 +424,18 @@ bot.on('message',  message => {
                     "name": "Lacis",
                     "value": "165CM | 86B / 60W / 88H",
                     "inline": true
-                  },
+                  }
+                ]
+              }
+              
+              embed: {
+                color:7154121,
+                title: "Vital stats for pixies on Asgard",
+                description: "```See who's big or otherwise. Excited yet, Captain? ```",
+                thumbnail: {
+                  "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
+                },
+                fields: [
                   {
                     "name": "Lita",
                     "value": "148CM | 79B / 56W / 79H",
