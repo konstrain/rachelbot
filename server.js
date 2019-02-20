@@ -459,7 +459,15 @@ bot.on('message',  message => {
                     "name": "Archi",
                     "value": "167CM | 81B / 61W / 85H",
                     "inline": true
-                  },
+                  }                  
+                ]
+              }
+            });
+            
+            channel.send({
+              embed: {
+                color:7154121,
+                fields: [
                   {
                     "name": "April",
                     "value": "154CM | 74B / 55W / 79H",
@@ -479,20 +487,7 @@ bot.on('message',  message => {
                     "name": "Eres",
                     "value": "165CM | 88B / 59W / 85H",
                     "inline": true
-                  }
-                ]
-              }
-            });
-            
-            channel.send({
-              embed: {
-                color:7154121,
-                title: "Vital stats for pixies on Asgard",
-                description: "```See who's big or otherwise. Excited yet, Captain? ```",
-                thumbnail: {
-                  "url": "https://cdn.discordapp.com/emojis/449888370219286528.png?v=1"
-                },
-                fields: [
+                  },
                   {
                     "name": "Rody",
                     "value": "156CM | 75B / 54W / 80H",
