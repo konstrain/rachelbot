@@ -105,7 +105,7 @@ bot.on('message',  message => {
                 randomizeJoke(channel);
                 break;
             case 'ping':
-                channel.send(`Don\'t ping me, captain. I\'d prefer that you ${auth.prefix}poke me... :flushed: `);
+                channel.send(`Don\'t ping me, captain. Don\'t ${auth.prefix}poke me too... :flushed: `);
                 break;
             case 'poke':
                 if(message.author.id === '350550564527931392') {
@@ -155,7 +155,7 @@ bot.on('message',  message => {
                   embed: {
                     color: 5685672,
                     title: (`Some of the best ${auth.prefix}jokes in Asgard, Captain.`),
-                    description: (`My prefix is ${auth.prefix}`),
+                    description: (`My prefix is ${auth.prefix}. The game is confirmed dead. So the only way I can live on, is through this discord channel.`),
                     thumbnail: {
                       "url": "https://farm1.staticflickr.com/891/28044949567_ef8d140588.jpg"
                     },
@@ -177,6 +177,11 @@ bot.on('message',  message => {
                       {
                         "name": "boobs",
                         "value": "Vital stats for all pixies on Asgard.",
+                        "inline": true
+                      },
+                      {
+                        "name": "b <pixie name>",
+                        "value": "Vital stats for named pixies only. Example, r!b rachel",
                         "inline": true
                       },
                       {
