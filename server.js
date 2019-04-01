@@ -424,15 +424,7 @@ bot.on('message',  message => {
                     "name": "Lacis",
                     "value": "165CM | 86B / 60W / 88H",
                     "inline": true
-                  }
-                ]
-              }
-            });
-            
-            channel.send({
-              embed: {
-                color:7154121,
-                fields: [
+                  },
                   {
                     "name": "Lita",
                     "value": "148CM | 79B / 56W / 79H",
@@ -452,7 +444,15 @@ bot.on('message',  message => {
                     "name": "Madi",
                     "value": "169CM | 87B / 62W / 92H",
                     "inline": true
-                  },
+                  }
+                ]
+              }
+            });
+            
+            channel.send({
+              embed: {
+                color:7154121,
+                fields: [
                   {
                     "name": "Devi",
                     "value": "178CM | 95B / 62W / 90H",
@@ -491,6 +491,46 @@ bot.on('message',  message => {
                   {
                     "name": "Rody",
                     "value": "156CM | 75B / 54W / 80H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Madeleine",
+                    "value": "165CM | 80B / 60W / 85H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Croia",
+                    "value": "173CM | 96B / 65W / 95H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Bri",
+                    "value": "162CM | 77B / 58W / 79H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Noel",
+                    "value": "165CM | 89B / 59W / 83H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Lucy",
+                    "value": "161CM | 77B / 56W / 83H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Rocinate",
+                    "value": "174CM | 89B / 61W / 90H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Rylah",
+                    "value": "159CM | 82B / 55W / 83H",
+                    "inline": true
+                  },
+                  {
+                    "name": "Amy",
+                    "value": "167CM | 86B / 61W / 90H",
                     "inline": true
                   },
                   {
