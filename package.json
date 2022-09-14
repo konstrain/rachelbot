@@ -9,8 +9,8 @@
   },
   "author": "konstrain#8200",
   "dependencies": {
-    "csv-parse": "^2.5.0",
-    "discord.js": "^11.3.2"
+    "csv-parse": "^5.3.0",
+    "discord.js": "^14.3.0"
   },
   "engines": {
     "node": "18.x",
