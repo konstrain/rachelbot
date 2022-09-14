@@ -68,23 +68,23 @@ const randomizeJoke = (channel) => {
   }
 }
 
-bot.on('message', async msg => {
-  switch (msg.content) {
+bot.on('message', async message => {
+  switch (message.content) {
     case "ping":
-      msg.reply("Pong!");
+      message.reply("Pong!");
       break;
     //our meme command below
-    case "!meme":
-      msg.channel.send("Here's your meme!"); //Replies to user command
-      const img = await getMeme(); //fetches an URL from the API
-      msg.channel.send(img); //send the image URL
+    case "!joke":
+      message.channel.send("Here's your joke!"); //Replies to user command
+      randomizeJoke(channel);
       break;
+    
    }
 }).on('error', (e) => {
       console.error(e);
     });
 
-/*bot.on('message',  message => {
+/*bot.on('message', async message => {
   
   var text = message.content;
   var channel = message.channel;
