@@ -1,93 +1,30 @@
-const https = require('https');
-/* const express = require('express');
-const app = express(); */
-//var fast_csv = require('fast-csv');
-var fs = require('fs');
-var parse = require('csv-parse');
- 
-var inputFile='expCalc.csv';
-var inputFile2='vitalStats.csv';
-console.log("Processing CSV file");
+const Discord = require("discord.js")
+const fetch = require("node-fetch")
+const Database = require("@replit/database")
 
-const Discord = require('discord.js');
-const auth = require('./auth.json');
+const db = new Database()
+const client = new Discord.Client()
 
-const fetch = require("node-fetch");
-const client = new Discord.Client();
+const sadWords = ["sad", "depressed", "unhappy", "angry", "miserable"]
 
-/* var bot = new Discord.Client();
-bot.on('ready', (evt) => {
-    bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | ${bot.users.size} | Here?`);
-    console.log('Connected yo! Can you see me!? ');
-}).on('error', (e) => {
-  console.error(e);
-});
-*/
-var myLines = ['You calling me a joke poke, captain? Not funny...', 'Ouch, stop that right now!', 'Okay, can you just ping me instead?', 'Now that\'s pretty rude, Captain',
-'Captain, I\'m married to <@350550564527931392>. Quit poking me.', 'If you didn\'t notice, I WAS JOKING! Now, why don\'t you pick other pixies to poke?',
-'I woke up to find you poke me, drinking coke, sharing joke, what a bloke, gone for smoke, down for choke, eventually broke, get a heatstroke while backstroke, license revoked and stop provoke.'];
-
-var myOwnLines = ['You can poke me anytime, darling Captain.','Oh Captain, that feels soo good. Don\'t stop :kissing_closed_eyes:','Ouch, that hurts a little. Be gentle..','**MOANS**',
-'Am I supposed to feel this good?','mmmm, ok Captain darling, my turn to poke you.','**Pokes** you back!','I\'m shy, darling.','There\'s people watching, Captain.'];
-
-var myWrongHelpLines = [`I don\'t understand that command, captain. Seek ${auth.prefix}help`,
-`Captain, did you made a typo? ${auth.prefix}help for better clarity.`,
-`See? Alcohol and drugs are a problem. You need ${auth.prefix}help`,
-`I don\'t understand you anymore. Go for ${auth.prefix}help`
+const starterEncouragements = [
+  "Cheer up!",
+  "Hang in there.",
+  "You are a great person / bot!"
 ]
 
-//var show = myLines[Math.floor(Math.random() * myLines.length)];
+db.get("encouragements").then(encouragements => {
+  console.log(encouragements)
+  if (!encouragements || encouragements.length < 1) {
+    db.set("encouragements", starterEncouragements)
+  }  
+})
 
-const url = "https://icanhazdadjoke.com/slack";
-
-const randomizeJoke = (channel) => {
-  try {
-      https.get(url, res => {
-          res.setEncoding("utf8");
-
-          let body = "";
-          res.on("data", chunk => {
-              body += chunk;
-          });
-
-          res.on("end", () => {
-            body = JSON.parse(body);
-
-            //console.log(`Result: ${body.attachments[0].fallback}`); // for debug purposes
-            channel.send({ 
-              embed: {
-                color:3447003,
-                title: "Are you ready, Captain?",
-                description:body.attachments[0].fallback
-              }
-            });
-          });
-      }).on('error', (e) => {
-        console.error(e);
-        channel.send(e);
-      });
-    } catch (err) {
-    console.error(err);
-  }
-}
-/*
-bot.on('message', async message => {
-  
-  var channel = message.channel;
- 
-  switch (message.content) {
-    case "ping":
-      message.reply("Pong!");
-      break;
-    case "!joke":
-      message.channel.send("Here's your joke!");
-      randomizeJoke(channel);
-      break;
-   }
-}).on('error', (e) => {
-      console.error(e);
-    });
-*/
+db.get("responding").then(value => {
+  if (value == null) {
+    db.set("responding", true)
+  }  
+})
 
 function getQuote() {
   return fetch("https://zenquotes.io/api/random")
@@ -99,20 +36,69 @@ function getQuote() {
     })
 }
 
+function updateEncouragements(encouragingMessage) {
+  db.get("encouragements").then(encouragements => {
+    encouragements.push([encouragingMessage])
+    db.set("encouragements", encouragements)
+  })
+}
+
+function deleteEncouragment(index) {
+  db.get("encouragements").then(encouragements => {
+    if (encouragements.length > index) {
+      encouragements.splice(index, 1)
+      db.set("encouragements", encouragements)
+    }
+  })
+}
+
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
 client.on("message", msg => {
-  if (msg.author.bot) return
-    
   if (msg.content === "$inspire") {
     getQuote().then(quote => msg.channel.send(quote))
   }
+
+  db.get("responding").then(responding => {
+    if (responding && sadWords.some(word => msg.content.includes(word))) {
+      db.get("encouragements").then(encouragements => {
+        const encouragement = encouragements[Math.floor(Math.random() * encouragements.length)]
+        msg.reply(encouragement)
+      })
+    }
+  })
+
+  if (msg.content.startsWith("$new")) {
+    encouragingMessage = msg.content.split("$new ")[1]
+    updateEncouragements(encouragingMessage)
+    msg.channel.send("New encouraging message added.")
+  }
+
+  if (msg.content.startsWith("$del")) {
+    index = parseInt(msg.content.split("$del ")[1])
+    deleteEncouragment(index)
+    msg.channel.send("Encouraging message deleted.")
+  }
+
+  if (msg.content.startsWith("$list")) {
+    db.get("encouragements").then(encouragements => {
+      msg.channel.send(encouragements)
+    })
+  }
+    
+  if (msg.content.startsWith("$responding")) {
+    value = msg.content.split("$responding ")[1]
+
+    if (value.toLowerCase() == "true") {
+      db.set("responding", true)
+      msg.channel.send("Responding is on.")
+    } else {
+      db.set("responding", false)
+      msg.channel.send("Responding is off.")
+    }
+  }
 })
 
-
-
-process.on('unhandledRejection', console.error);
-
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.TOKEN)
