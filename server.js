@@ -80,7 +80,9 @@ bot.on('message', async msg => {
       msg.channel.send(img); //send the image URL
       break;
    }
-})
+}).on('error', (e) => {
+      console.error(e);
+    });
 
 /*bot.on('message',  message => {
   
@@ -296,12 +298,12 @@ bot.on('message', async msg => {
                               "name": "S Mini-Mini",
                               "value": `Same class: ${Math.ceil((suits.expCum-suitExp)/9810)} unit(s)  |  Diff class: ${Math.ceil((suits.expCum-suitExp)/6540)} unit(s)`
                             }
-                            /*
-                            US same class 102960     US diff class 68640
-                            S3 same class 56475      S3 diff class 37650
-                            S2 same class 23355      S2 diff class 15570
-                            S same class 9810        S diff class 6540
-                            */
+                            
+                            //US same class 102960     US diff class 68640
+                            //S3 same class 56475      S3 diff class 37650
+                            //S2 same class 23355      S2 diff class 15570
+                            //S same class 9810        S diff class 6540
+                            
                           ]
                         }
                       });
