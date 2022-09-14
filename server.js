@@ -46,7 +46,22 @@ const randomizeJoke = (channel) => {
 }
 
 bot.on('message', async message => {
-  
+
+    if (message.content.startsWith(".say")) {
+      // Get the channel mention
+      if (message.mentions.channels.size == 0) {
+          message.reply("please mention a channel first.");
+      }
+      else {
+          let targetChannel = message.mentions.channels.first();
+          // Get the message to print
+
+          const args = message.content.split(" ").slice(2);
+          let saytext = args.join(" ");
+          targetChannel.send(saytext);
+          message.delete();
+      }
+        
   var channel = message.channel;
  
   switch (message.content) {
@@ -56,17 +71,6 @@ bot.on('message', async message => {
     case "r!joke":
       //message.channel.send("Here's your joke!");
       randomizeJoke(channel);
-      break;
-    case "r!say":
-          channel.send(message.content);
-          channel.send(" || HUH || ");
-          if(message.author.id === '350550564527931392') {
-              const sayMessage = message.content.split(' ').slice(1).join(' ');
-
-              channel.send(sayMessage);
-          } else {
-              channel.send(`'Sorry Captain ${message.author.username}, you\'re not my hubby.`)
-          }
       break;
    }
 }).on('error', (e) => {
