@@ -68,7 +68,21 @@ const randomizeJoke = (channel) => {
   }
 }
 
-bot.on('message',  message => {
+bot.on('message', async msg => {
+  switch (msg.content) {
+    case "ping":
+      msg.reply("Pong!");
+      break;
+    //our meme command below
+    case "!meme":
+      msg.channel.send("Here's your meme!"); //Replies to user command
+      const img = await getMeme(); //fetches an URL from the API
+      msg.channel.send(img); //send the image URL
+      break;
+   }
+})
+
+/*bot.on('message',  message => {
   
   var text = message.content;
   var channel = message.channel;
@@ -564,6 +578,8 @@ bot.on('message',  message => {
 }).on('error', (e) => {
       console.error(e);
     });
+
+*/
 
 process.on('unhandledRejection', console.error);
 
