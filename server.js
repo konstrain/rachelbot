@@ -58,8 +58,12 @@ bot.on('message', async message => {
       randomizeJoke(channel);
       break;
     case "r!say":
+          channel.send(message.content);
+          channel.send(" || HUH || ");
           if(message.author.id === '350550564527931392') {
-              channel.send((message.content.replace('r!say ','')));
+              const sayMessage = message.content.split(' ').slice(1).join(' ');
+
+              channel.send(sayMessage);
           } else {
               channel.send(`'Sorry Captain ${message.author.username}, you\'re not my hubby.`)
           }
