@@ -2,7 +2,9 @@ const https = require('https');
 const Discord = require('discord.js');
 const auth = require('./auth.json');
 
-var bot = new Discord.Client();
+const bot = new Discord.Client({intents : ["GUILDS", "DIRECT_MESSAGES", "GUILD_BANS", "GUILD_MEMBERS", "GUILD_PRESENCES", "GUILD_MESSAGE_REACTIONS", "GUILD_MESSAGES"]}) 
+
+//var bot = new Discord.Client();
 bot.on('ready', (evt) => {
     bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | ${bot.users.size} | Here?`);
     console.log('Connected yo! Can you see me!? ');
