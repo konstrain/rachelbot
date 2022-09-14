@@ -12,6 +12,11 @@ console.log("Processing CSV file");
 const Discord = require('discord.js');
 const auth = require('./auth.json');
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
+
 var bot = new Discord.Client();
 bot.on('ready', (evt) => {
     bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | ${bot.users.size}`);
