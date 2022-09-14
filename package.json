@@ -1,6 +1,6 @@
 {
   "name": "racheljokes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rachel's jokes and EXP Calculator",
   "main": "server.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "discord.js": "^11.3.2"
   },
   "engines": {
-    "node": "8.x",
+    "node": "18.x",
     "npm": "*"
   },
   "repository": {
