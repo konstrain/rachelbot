@@ -69,16 +69,17 @@ const randomizeJoke = (channel) => {
 }
 
 bot.on('message', async message => {
+  
+  var channel = message.channel;
+ 
   switch (message.content) {
     case "ping":
       message.reply("Pong!");
       break;
-    //our meme command below
     case "!joke":
-      message.channel.send("Here's your joke!"); //Replies to user command
+      message.channel.send("Here's your joke!");
       randomizeJoke(channel);
       break;
-    
    }
 }).on('error', (e) => {
       console.error(e);
