@@ -14,7 +14,7 @@ const auth = require('./auth.json');
 
 var bot = new Discord.Client();
 bot.on('ready', (evt) => {
-    bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | ${bot.users.size}`);
+    bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | ${bot.users.size} | Here?`);
     console.log('Connected yo! Can you see me!? ');
 }).on('error', (e) => {
   console.error(e);
