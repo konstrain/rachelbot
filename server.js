@@ -53,9 +53,16 @@ bot.on('message', async message => {
     case "ping":
       message.reply("Pong!");
       break;
-    case "!joke":
-      message.channel.send("Here's your joke!");
+    case "r!joke":
+      //message.channel.send("Here's your joke!");
       randomizeJoke(channel);
+      break;
+    case "r!say":
+          if(message.author.id === '350550564527931392') {
+              channel.send((message.content.replace('r!say ','')));
+          } else {
+              channel.send(`'Sorry Captain ${message.author.username}, you\'re not my hubby.`)
+          }
       break;
    }
 }).on('error', (e) => {
