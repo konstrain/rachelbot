@@ -49,7 +49,7 @@ bot.on('message', async message => {
 
     if (message.content.startsWith(".say")) {
       // Get the channel mention
-      if (message.mentions.channels.size == 0) {
+      /*if (message.mentions.channels.size == 0) {
           message.reply("please mention a channel first.");
       }
       else {
@@ -60,7 +60,11 @@ bot.on('message', async message => {
           let saytext = args.join(" ");
           targetChannel.send(saytext);
           message.delete();
-      }
+      }*/
+        
+        let saymsg = message.content;
+        message.channel.send(saymsg.replace(".say",""));
+        message.delete(1);
     }
         
   var channel = message.channel;
