@@ -61,6 +61,7 @@ bot.on('message', async message => {
           targetChannel.send(saytext);
           message.delete();
       }
+    }
         
   var channel = message.channel;
  
