@@ -81,25 +81,25 @@ bot.on('message', async message => {
     var cmd = args.shift().toLowerCase();
 
     switch (cmd) {
-        case "ping":
+        case "ping2":
             message.reply("Pong!");
             break;
-        case "r!joke":
+        case "joke":
             //message.channel.send("Here's your joke!");
             randomizeJoke(channel);
             break;
-        case "r!jokes":
+        case "jokes":
             //message.channel.send("Here's your joke!");
             randomizeJoke(channel);
             break;
-        case "r!j":
+        case "j":
             //message.channel.send("Here's your joke!");
             randomizeJoke(channel);
             break;
         case "ping":
             channel.send(`Don\'t ping me, captain. Don\'t r!poke me too... :flushed: `);
             break;
-        case "r!poke":
+        case "poke":
             if (message.author.id === '350550564527931392') {
                 channel.send(myOwnLines[Math.floor(Math.random() * myOwnLines.length)]);
             } else {
@@ -125,7 +125,7 @@ bot.on('message', async message => {
                 }
             });
             break;
-        case 'r!episode':
+        case 'episode':
             channel.send({
                 embed: {
                     color: 5685672,
@@ -139,10 +139,10 @@ bot.on('message', async message => {
                 }
             });
             break;
-        case 'r!awaken':
+        case 'awaken':
             channel.send('https://youtu.be/h-70tyy8E3M?t=10m25s');
             break;
-        case 'r!help':
+        case 'help':
             channel.send({
                 embed: {
                     color: 5685672,
@@ -462,9 +462,6 @@ bot.on('message', async message => {
             } else {
                 channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.");
             }
-            break;
-        default:
-            channel.send(myWrongHelpLines[Math.floor(Math.random() * myWrongHelpLines.length)]);
             break;
     }
 }).on('error', (e) => {
