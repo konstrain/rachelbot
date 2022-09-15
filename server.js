@@ -81,9 +81,6 @@ bot.on('message', async message => {
     var cmd = args.shift().toLowerCase();
 
     switch (cmd) {
-        case "ping2":
-            message.reply("Pong!");
-            break;
         case "joke":
             //message.channel.send("Here's your joke!");
             randomizeJoke(channel);
@@ -106,7 +103,7 @@ bot.on('message', async message => {
                 channel.send(myLines[Math.floor(Math.random() * myLines.length)]);
             }
             break;
-        case "r!about":
+        case "about":
             channel.send({
                 embed: {
                     color: 3568567,
