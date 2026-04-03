@@ -33,9 +33,9 @@ var myWrongHelpLines = [`I don\'t understand that command, captain. Seek ${auth.
 `I don\'t understand you anymore. Go for ${auth.prefix}help`
 ]
 
-const url = "https://icanhazdadjoke.com/slack";
+//const url = "https://icanhazdadjoke.com/slack";
 
-const randomizeJoke = (channel) => {
+/*const randomizeJoke = (channel) => {
     try {
         https.get(url, res => {
             res.setEncoding("utf8");
@@ -64,7 +64,57 @@ const randomizeJoke = (channel) => {
     } catch (err) {
         console.error(err);
     }
-}
+}*/
+
+const randomizeJoke = (channel) => {
+    try {
+        const options = {
+            hostname: 'icanhazdadjoke.com',
+            path: '/',
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'User-Agent': 'racheljokes-discord-bot (https://github.com/konstrain/racheljokes)'
+            }
+        };
+
+        const req = https.request(options, res => {
+            let body = '';
+            res.setEncoding('utf8');
+
+            res.on('data', chunk => {
+                body += chunk;
+            });
+
+            res.on('end', () => {
+                try {
+                    const data = JSON.parse(body);
+
+                    channel.send({
+                        embed: {
+                            color: 3447003,
+                            title: 'Are you ready, Captain?',
+                            description: data.joke || 'No joke found.'
+                        }
+                    });
+                } catch (err) {
+                    console.error('Joke parse error:', err);
+                    console.error('Raw response:', body);
+                    channel.send('Sorry Captain, I could not read the joke response.');
+                }
+            });
+        });
+
+        req.on('error', (e) => {
+            console.error('Joke request error:', e);
+            channel.send('Sorry Captain, I ran into an error getting a joke.');
+        });
+
+        req.end();
+    } catch (err) {
+        console.error('randomizeJoke error:', err);
+    }
+};
 
 bot.on('message', async message => {
 
