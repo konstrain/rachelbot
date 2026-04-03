@@ -6,6 +6,8 @@ const inputFile = 'expCalc.csv';
 const inputFile2 = 'vitalStats.csv';
 console.log("Processing CSV file");
 
+const OWNER_ID = '350550564527931392';
+
 const Discord = require('discord.js');
 const { GatewayIntentBits, EmbedBuilder } = Discord;
 const auth = require('./auth.json');
@@ -200,7 +202,11 @@ bot.on('messageCreate', async message => {
             break;
 
         case "love":
-            channel.send("The one and only man I love... <@350550564527931392>");
+            if (message.author.id === OWNER_ID)
+                channel.send("Do you even need to ask? It's definitely you!");
+            } else {
+                channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.");
+            }
             break;
     }
 });
