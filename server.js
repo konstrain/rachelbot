@@ -1,10 +1,20 @@
 const https = require('https');
 const fs = require('fs');
 const { parse } = require('csv-parse');
-
 const inputFile = 'expCalc.csv';
 const inputFile2 = 'vitalStats.csv';
 console.log("Processing CSV file");
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Bot is alive');
+});
+
+app.listen(3000, () => {
+  console.log('Keep-alive server running');
+});
 
 const OWNER_ID = '350550564527931392';
 
