@@ -12,8 +12,10 @@ app.get('/', (req, res) => {
   res.send('Bot is alive');
 });
 
-app.listen(3000, () => {
-  console.log('Keep-alive server running');
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Web server running on port ${PORT}`);
 });
 
 const OWNER_ID = '350550564527931392';
