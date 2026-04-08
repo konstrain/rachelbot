@@ -1,8 +1,6 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
-const { parse } = require('csv-parse');
-const inputFile = 'expCalc.csv';
 const inputFile2 = 'vitalStats.csv';
 console.log("Processing CSV file");
 
@@ -142,7 +140,6 @@ bot.on('messageCreate', async message => {
 
     if (message.author.bot) return;
 
-    // .say command
     if (message.content.startsWith(".say")) {
         const saymsg = message.content.replace(".say", "").trim();
         if (saymsg.length > 0) {
@@ -156,7 +153,6 @@ bot.on('messageCreate', async message => {
         return;
     }
 
-    // prefix (case-insensitive)
     if (!message.content.toLowerCase().startsWith(auth.prefix.toLowerCase())) return;
 
     const text = message.content;
@@ -165,75 +161,21 @@ bot.on('messageCreate', async message => {
     const args = text.slice(auth.prefix.length).trim().split(/ +/g);
     const cmd = args.shift()?.toLowerCase();
 
-    // 🔥 THIS IS THE CONTEXT YOU WERE LOOKING FOR
     const context = {
         OWNER_ID,
         patLines,
         otherPatLines,
         randomizeJoke,
         auth,
-        commands
+        commands,
+        inputFile2
     };
 
-    // modular commands
     const modularCommand = commands.get(cmd);
     if (modularCommand) {
         return modularCommand.execute(message, args, channel, context);
     }
-
-    // ------------------- REMAINING COMMANDS -------------------
-
-    switch (cmd) {
-
-        case "b":
-            let [pixie] = args;
-
-            if (!pixie) {
-                channel.send('Please provide a pixie name. Example: r!b rachel');
-                return;
-            }
-
-            const pixieName = pixie.toUpperCase();
-
-            const parser = parse({ delimiter: ',' }, (err, data) => {
-                if (err) {
-                    console.error(err);
-                    channel.send("Error reading data.");
-                    return;
-                }
-
-                const row = data.find(line => line[0] === pixieName);
-
-                if (!row) {
-                    channel.send(`No data found for ${pixie}`);
-                    return;
-                }
-
-                channel.send({
-                    embeds: [new EmbedBuilder()
-                        .setColor(7154121)
-                        .setTitle(`Vital stats for ${row[0]}`)
-                        .setDescription("```Excited yet, Captain? :wink:```")
-                        .addFields(
-                            { name: "Height", value: row[1], inline: false },
-                            { name: "Bust", value: row[2], inline: true },
-                            { name: "Waist", value: row[3], inline: true },
-                            { name: "Hips", value: row[4], inline: true }
-                        )
-                    ]
-                });
-            });
-
-            fs.createReadStream(inputFile2).pipe(parser);
-            break;
-
-        case "boobs":
-            channel.send("You know where to look, Captain... :wink:");
-            break;
-    }
 });
-
-// ------------------- START BOT -------------------
 
 process.on('unhandledRejection', console.error);
 
