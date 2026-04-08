@@ -175,58 +175,6 @@ bot.on('messageCreate', async message => {
     }
 
     switch (cmd) {
-
-        case "ping":
-            channel.send("Don't ping me, captain. Don't r!poke me too... :flushed:");
-            break;
-
-        case "poke":
-            if (message.author.id === OWNER_ID) {
-                channel.send("You can poke me anytime, darling Captain.");
-            } else {
-                channel.send("Ouch, stop that right now!");
-            }
-            break;
-
-        case "about":
-            channel.send({
-                embeds: [new EmbedBuilder()
-                    .setColor(3568567)
-                    .setTitle("Some information about me, Captain.")
-                    .addFields(
-                        { name: "Voice artist", value: "Kaneko Sayaka" },
-                        { name: "Favourite quote", value: "I don't have a problem with you." },
-                        { name: "Class", value: "Sniper" },
-                        { name: "Preferred suit", value: "~~Pauler~~ Atropos, really" },
-                        { name: "Height", value: "162cm" },
-                        { name: "Vital stats", value: "75B | 60W | 85H" },
-                        { name: "Personality", value: "Normally quiet and calm, but will randomly add hilarious quips." },
-                        { name: "Hobby & Speciality", value: "World chess champion." },
-                        { name: "Married to", value: "<@350550564527931392>" }
-                    )
-                ]
-            });
-            break;
-
-        case 'episode':
-            channel.send({
-                embeds: [new EmbedBuilder()
-                    .setColor(5685672)
-                    .setTitle("How to clear my episodes")
-                    .setDescription(`Try to get perfect clear, Captain!
-**Episode 1** - "Placate Rachel"
-**Episode 2** - "No, She looks okay"
-**Episode 3** - "I need to organize my thoughts" / "Be honest"
-**Episode 4** - "We only have jokes to rely on!" / "It's my fault"
-**Episode 9** - "Just give her a little hint" / "I don't know what to do!"`)
-                ]
-            });
-            break;
-
-        case 'awaken':
-            channel.send('https://youtu.be/h-70tyy8E3M?t=10m25s');
-            break;
-
         case 'help':
             channel.send({
                 embeds: [new EmbedBuilder()
@@ -348,14 +296,6 @@ bot.on('messageCreate', async message => {
                     )
                 ]
             });
-            break;
-
-        case "love":
-            if (message.author.id === OWNER_ID) {
-                channel.send("Do you even need to ask? It's definitely you!");
-            } else {
-                channel.send("The one and only man I love... <@350550564527931392> My life, my love, my hubby.");
-            }
             break;
     }
 });
