@@ -1,5 +1,6 @@
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
 const { parse } = require('csv-parse');
 const inputFile = 'expCalc.csv';
 const inputFile2 = 'vitalStats.csv';
@@ -42,6 +43,26 @@ bot.on('clientReady', () => {
 });
 
 bot.on('error', console.error);
+
+// ------------------- COMMAND LOADER -------------------
+
+const commands = new Map();
+const commandsPath = path.join(__dirname, 'commands');
+
+if (fs.existsSync(commandsPath)) {
+    const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+
+    for (const file of commandFiles) {
+        const command = require(path.join(commandsPath, file));
+        commands.set(command.name, command);
+
+        if (command.aliases) {
+            for (const alias of command.aliases) {
+                commands.set(alias, command);
+            }
+        }
+    }
+}
 
 // ------------------- RANDOM JOKE -------------------
 
@@ -141,13 +162,19 @@ bot.on('messageCreate', async message => {
     const args = text.slice(auth.prefix.length).trim().split(/ +/g);
     const cmd = args.shift()?.toLowerCase();
 
-    switch (cmd) {
+    const context = {
+        OWNER_ID,
+        patLines,
+        otherPatLines,
+        randomizeJoke
+    };
 
-        case "joke":
-        case "jokes":
-        case "j":
-            randomizeJoke(channel);
-            break;
+    const modularCommand = commands.get(cmd);
+    if (modularCommand) {
+        return modularCommand.execute(message, args, channel, context);
+    }
+
+    switch (cmd) {
 
         case "ping":
             channel.send("Don't ping me, captain. Don't r!poke me too... :flushed:");
@@ -158,14 +185,6 @@ bot.on('messageCreate', async message => {
                 channel.send("You can poke me anytime, darling Captain.");
             } else {
                 channel.send("Ouch, stop that right now!");
-            }
-            break;
-
-        case "pat":
-            if (message.author.id === OWNER_ID) {
-                channel.send(patLines[Math.floor(Math.random() * patLines.length)]);
-            } else {
-                channel.send(otherPatLines[Math.floor(Math.random() * otherPatLines.length)]);
             }
             break;
 
@@ -218,7 +237,7 @@ bot.on('messageCreate', async message => {
                     .addFields(
                         { name: "help", value: "Shows this help message to you.", inline: true },
                         { name: "about", value: "Some information about me.", inline: true },
-                        { name: "awaken", value: "Watch me awaken again and again and again and... :flushed:" },
+                        { name: "awaken", value: "Watch me awaken again and again and again and... :flushed:", inline: true },
                         { name: "boobs", value: "Vital stats for all pixies on Asgard.", inline: true },
                         { name: "b <pixie name>", value: "Vital stats for named pixies only. Example, r!b rachel", inline: true },
                         { name: "episode", value: "How to clear my episodes.", inline: true },
@@ -340,8 +359,6 @@ bot.on('messageCreate', async message => {
             break;
     }
 });
-
-// ------------------- START BOT -------------------
 
 process.on('unhandledRejection', console.error);
 
