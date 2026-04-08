@@ -116,24 +116,6 @@ const randomizeJoke = (channel) => {
     }
 };
 
-// ------------------- PAT RESPONSES -------------------
-
-const patLines = [
-    "Mmm... that's a gentle touch, Captain.",
-    "Rachel closes her eyes for a moment. 'You may continue.'",
-    "A pat on the head? ...I'll allow it, Captain.",
-    "Rachel leans into your hand slightly. 'Don't stop just yet.'",
-    "Hehe... you're oddly affectionate today, Captain."
-];
-
-const otherPatLines = [
-    "Rachel steps back. 'Hands off.'",
-    "She brushes your hand away. 'Don't get too familiar.'",
-    "Rachel gives you a cold stare. 'Only Captain gets to do that.'",
-    "She stiffens. '...I'd rather you didn't.'",
-    "Rachel quietly moves out of reach."
-];
-
 // ------------------- BOT LOGIC -------------------
 
 bot.on('messageCreate', async message => {
@@ -163,8 +145,6 @@ bot.on('messageCreate', async message => {
 
     const context = {
         OWNER_ID,
-        patLines,
-        otherPatLines,
         randomizeJoke,
         auth,
         commands,
