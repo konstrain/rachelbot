@@ -9,39 +9,39 @@ module.exports = {
         const responses = {
             cheerful: {
                 owner: [
-                    "I'm always here for you, Captain 😊",
+                    "I'm always here for you, {captain} 😊",
                     "Pong~ you called?",
                     "Right here. Watching you 👀"
                 ],
                 user: [
                     "Pong! 😊",
-                    "I'm here!",
-                    "Yes yes, alive and well."
+                    "{user}, I'm here!",
+                    "Yes yes, {user}, I'm alive and well."
                 ]
             },
 
             playful: {
                 owner: [
                     "Miss me already? 😏",
-                    "Pong~ what do you need, Captain?",
-                    "You checking up on me again?"
+                    "Pong~ what do you need, {captain}?",
+                    "You checking up on me again, {captain}?"
                 ],
                 user: [
                     "Pong~ 😏",
-                    "You called?",
+                    "You called, {user}?",
                     "At your service. Maybe."
                 ]
             },
 
             sarcastic: {
                 owner: [
-                    "Yes, Captain. I’m still functioning.",
-                    "Congratulations. Your bot works.",
+                    "Yes, {captain}. I’m still functioning.",
+                    "Congratulations, {captain}. Your lovebot works.",
                     "You built me just to test ping?"
                 ],
                 user: [
                     "Yes, I'm alive.",
-                    "Congratulations. It works.",
+                    "Congratulations, {user}. It works.",
                     "What a shocking result."
                 ]
             },
