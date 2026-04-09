@@ -1,3 +1,17 @@
+function pickRandom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function fillPlaceholders(text, message, context) {
+    const isOwner = message.author.id === context.OWNER_ID;
+
+    return text
+        .replace(/\{user\}/g, message.author.username)
+        .replace(/\{mention\}/g, `<@${message.author.id}>`)
+        .replace(/\{captain\}/g, isOwner ? 'Captain' : message.author.username)
+        .replace(/\{bot\}/g, message.client.user.username);
+}
+
 function getResponse(message, context, responses) {
     const mood = context.getMood();
     const isOwner = message.author.id === context.OWNER_ID;
@@ -14,7 +28,8 @@ function getResponse(message, context, responses) {
         return "Rachel is... thinking.";
     }
 
-    return pool[Math.floor(Math.random() * pool.length)];
+    const rawReply = pickRandom(pool);
+    return fillPlaceholders(rawReply, message, context);
 }
 
 module.exports = {
