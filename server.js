@@ -1,6 +1,7 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const { getMood } = require('./mood');
 const inputFile2 = 'vitalStats.csv';
 console.log("Processing CSV file");
 
@@ -148,7 +149,8 @@ bot.on('messageCreate', async message => {
         randomizeJoke,
         auth,
         commands,
-        inputFile2
+        inputFile2,
+        getMood
     };
 
     const modularCommand = commands.get(cmd);
