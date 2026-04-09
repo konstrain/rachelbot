@@ -1,13 +1,10 @@
+const { getResponse } = require('../utils/responseEngine');
+
 module.exports = {
     name: "pat",
     description: "Pat me gently... if you're allowed to.",
 
     execute: (message, args, channel, context) => {
-
-        const { OWNER_ID, getMood } = context;
-
-        const mood = getMood();
-        const isOwner = message.author.id === OWNER_ID;
 
         const responses = {
             cheerful: {
@@ -66,9 +63,7 @@ module.exports = {
             }
         };
 
-        const pool = isOwner ? responses[mood].owner : responses[mood].user;
-        const reply = pool[Math.floor(Math.random() * pool.length)];
-
+        const reply = getResponse(message, context, responses);
         channel.send(reply);
     }
 };
