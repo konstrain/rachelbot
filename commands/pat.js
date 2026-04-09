@@ -4,45 +4,71 @@ module.exports = {
 
     execute: (message, args, channel, context) => {
 
-        const { OWNER_ID } = context;
+        const { OWNER_ID, getMood } = context;
 
-        const patLines = [
-            "Mmm... that's a gentle touch, Captain.",
-            "Rachel closes her eyes for a moment. 'You may continue.'",
-            "A pat on the head? ...I'll allow it, Captain.",
-            "Rachel leans into your hand slightly. 'Don't stop just yet.'",
-            "Hehe... you're oddly affectionate today, Captain.",
-            "Rachel exhales softly. 'You're in a good mood today…'",
-            "She tilts her head into your palm. 'You’re getting bold, Captain.'",
-            "Rachel glances at you. '…Just this once.'",
-            "A faint smile appears. 'You always know when to do that.'",
-            "Rachel’s eyes soften. 'You’re trying to spoil me, aren’t you?'",
-            "She sighs quietly. '…I don’t hate it.'",
-            "Rachel rests her head lightly. 'Stay like this for a bit.'",
-            "A soft chuckle. 'Careful, Captain… I might get used to this.'",
-            "Rachel’s voice lowers. 'You’re the only one allowed…'",
-            "She looks up at you. '…Don’t stop.'"
-        ];
+        const mood = getMood();
+        const isOwner = message.author.id === OWNER_ID;
 
-        const otherPatLines = [
-            "Rachel steps back. 'Hands off.'",
-            "She brushes your hand away. 'Don't get too familiar.'",
-            "Rachel gives you a cold stare. 'Only Captain gets to do that.'",
-            "She stiffens. '...I'd rather you didn't.'",
-            "Rachel quietly moves out of reach.",
-            "Rachel frowns. 'Do you mind?'",
-            "She pulls away immediately. 'You're overstepping.'",
-            "Rachel narrows her eyes. 'Don't touch me.'",
-            "She sighs. 'That’s not appropriate.'",
-            "Rachel crosses her arms. 'You’re not Captain.'",
-            "She shifts away without a word.",
-            "Rachel gives you a flat look. 'Try that again.'"
-        ];
+        const responses = {
+            cheerful: {
+                owner: [
+                    "Mmm... that's a gentle touch, Captain.",
+                    "Rachel smiles softly. 'You’re in a good mood today…'",
+                    "Hehe... you're oddly affectionate today, Captain.",
+                    "A faint smile appears. 'You always know when to do that.'"
+                ],
+                user: [
+                    "Rachel steps back. 'Ah… maybe not.'",
+                    "She gives a polite smile. 'Let’s keep some distance, alright?'",
+                    "Rachel chuckles lightly. 'That’s not for you.'"
+                ]
+            },
 
-        if (message.author.id === OWNER_ID) {
-            channel.send(patLines[Math.floor(Math.random() * patLines.length)]);
-        } else {
-            channel.send(otherPatLines[Math.floor(Math.random() * otherPatLines.length)]);
-        }
+            playful: {
+                owner: [
+                    "Rachel leans into your hand slightly. 'Don't stop just yet.'",
+                    "She tilts her head into your palm. 'You’re getting bold, Captain.'",
+                    "A soft chuckle. 'Careful, Captain… I might get used to this.'",
+                    "Rachel looks up at you. '…Don’t stop.'"
+                ],
+                user: [
+                    "Rachel dodges slightly. 'Nice try.'",
+                    "She grins. 'You’re not getting away with that.'",
+                    "Rachel taps your hand away. 'Careful.'"
+                ]
+            },
+
+            sarcastic: {
+                owner: [
+                    "Rachel glances at you. '…Just this once.'",
+                    "She exhales. 'You’re spoiling me again.'",
+                    "Rachel smirks faintly. 'You want something, don’t you?'"
+                ],
+                user: [
+                    "Rachel gives you a flat look. 'No.'",
+                    "She brushes your hand away. 'Don't get too familiar.'",
+                    "Rachel narrows her eyes. 'You’re not Captain.'",
+                    "Rachel turns away. 'That privilege isn’t yours.'"
+                ]
+            },
+
+            sleepy: {
+                owner: [
+                    "Rachel closes her eyes for a moment. 'You may continue…'",
+                    "She rests her head lightly. 'Stay like this…'",
+                    "A soft sigh. '…I don’t hate this.'"
+                ],
+                user: [
+                    "Rachel shifts away quietly.",
+                    "She sighs. '…Not now.'",
+                    "Rachel barely reacts. 'Please don’t…'"
+                ]
+            }
+        };
+
+        const pool = isOwner ? responses[mood].owner : responses[mood].user;
+        const reply = pool[Math.floor(Math.random() * pool.length)];
+
+        channel.send(reply);
     }
 };
