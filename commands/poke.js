@@ -9,7 +9,7 @@ module.exports = {
         const responses = {
             cheerful: {
                 owner: [
-                    "You can poke me anytime, darling Captain.",
+                    "You can poke me anytime, darling {captain}.",
                     "A soft laugh. 'You’re being playful today… I like it.'",
                     "Rachel smiles. 'Trying to get my attention?'"
                 ],
@@ -23,26 +23,26 @@ module.exports = {
             playful: {
                 owner: [
                     "Rachel smirks. 'That’s all you’ve got?'",
-                    "She taps you back lightly. 'Careful, Captain… I poke back.'",
+                    "She taps you back lightly. 'Careful, {captain}… I poke back.'",
                     "Rachel lowers her voice. 'Do that again… slowly.'",
                     "She nudges you. 'Don’t start something you can’t finish.'"
                 ],
                 user: [
                     "Oh? You wanna start something? 😏",
-                    "Rachel pokes you back. 'Careful.'",
+                    "Rachel pokes you back. 'Careful, {user}.'",
                     "She grins. 'Bold move.'"
                 ]
             },
 
             sarcastic: {
                 owner: [
-                    "Rachel raises an eyebrow. 'Really, Captain?'",
-                    "A quiet chuckle. 'You built me for this?'",
+                    "Rachel raises an eyebrow. 'Really, {captain}?'",
+                    "A quiet chuckle. 'Darling {captain}, you built me for this?'",
                     "She tilts her head. 'Peak entertainment.'"
                 ],
                 user: [
                     "Wow. Incredible.",
-                    "Rachel stares. 'You done?'",
+                    "Rachel stares. 'You done, {user}?'",
                     "…That was necessary?"
                 ]
             },
