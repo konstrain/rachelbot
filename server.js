@@ -37,8 +37,28 @@ const bot = new Discord.Client({
 });
 
 bot.on('clientReady', () => {
-    bot.user.setActivity(`with @konstrain#8200 | ${auth.prefix}help | Here?`);
     console.log('Connected yo! Can you see me!? ');
+
+    const updateActivity = () => {
+        const mood = getMood();
+
+        const moodText = {
+            cheerful: "feeling cheerful 😊",
+            playful: "feeling playful 😏",
+            sarcastic: "feeling sarcastic 🙄",
+            sleepy: "feeling sleepy 😴"
+        };
+
+        bot.user.setActivity(
+            `with @konstrain#8200 | ${auth.prefix}help | ${moodText[mood]}`
+        );
+    };
+
+    // run immediately
+    updateActivity();
+
+    // update every 30 seconds
+    setInterval(updateActivity, 30000);
 });
 
 bot.on('error', console.error);
