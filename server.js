@@ -39,26 +39,80 @@ const bot = new Discord.Client({
 bot.on('clientReady', () => {
     console.log('Connected yo! Can you see me!? ');
 
+    // ---------------- STATUS (your existing feature) ----------------
+
+    const moodText = {
+        cheerful: "in a good mood 😊",
+        playful: "feeling mischievous 😏",
+        sarcastic: "not impressed 🙄",
+        sleepy: "half asleep 😴"
+    };
+
     const updateActivity = () => {
         const mood = getMood();
-
-        const moodText = {
-            cheerful: "feeling cheerful 😊",
-            playful: "feeling playful 😏",
-            sarcastic: "feeling sarcastic 🙄",
-            sleepy: "feeling sleepy 😴"
-        };
 
         bot.user.setActivity(
             `with @konstrain#8200 | ${auth.prefix}help | ${moodText[mood]}`
         );
     };
 
-    // run immediately
     updateActivity();
-
-    // update every 30 seconds
     setInterval(updateActivity, 30000);
+
+    // ---------------- RANDOM TALK (NEW FEATURE) ----------------
+
+    const TALK_CHANNELS = [
+        '453918676022722561', // replace
+        '1301455116460752936'  // replace
+    ];
+
+    const randomTalk = () => {
+        const mood = getMood();
+
+        const lines = {
+            cheerful: [
+                "It's oddly peaceful right now… I like it.",
+                "I feel like something good is about to happen.",
+                "You all seem quieter today.",
+                "Mm… this is a nice moment."
+            ],
+            playful: [
+                "Someone’s definitely up to something.",
+                "It’s too quiet… suspicious.",
+                "I’m watching, you know.",
+                "Try something. I dare you."
+            ],
+            sarcastic: [
+                "Fascinating. Silence.",
+                "No one has anything interesting to say?",
+                "This is… underwhelming.",
+                "Remarkable. Truly."
+            ],
+            sleepy: [
+                "...it’s quiet.",
+                "Mm… I could fall asleep here.",
+                "Wake me if something interesting happens.",
+                "I’m… still here."
+            ]
+        };
+
+        const pool = lines[mood];
+        const text = pool[Math.floor(Math.random() * pool.length)];
+
+        const randomChannelId = TALK_CHANNELS[Math.floor(Math.random() * TALK_CHANNELS.length)];
+        const channel = bot.channels.cache.get(randomChannelId);
+
+        if (channel && channel.isTextBased()) {
+            channel.send(text).catch(console.error);
+        }
+    };
+
+    // every hour, 25% chance
+    setInterval(() => {
+        if (Math.random() < 0.25) {
+            randomTalk();
+        }
+    }, 60 * 60 * 1000);
 });
 
 bot.on('error', console.error);
