@@ -4,38 +4,69 @@ module.exports = {
 
     execute: (message, args, channel, context) => {
 
-        const { OWNER_ID } = context;
+        const { OWNER_ID, getMood } = context;
 
-        const pokeOwnerLines = [
-            "You can poke me anytime, darling Captain.",
-            "Rachel smirks. 'That’s all you’ve got?'",
-            "She taps you back lightly. 'Careful, Captain… I poke back.'",
-            "Rachel leans closer. 'Trying to get my attention?'",
-            "A soft laugh. 'You’re being playful today… I like it.'",
-            "Rachel glances at you. 'If you wanted me, just say so.'",
-            "She nudges you. 'Don’t start something you can’t finish.'",
-            "Rachel raises an eyebrow. 'Bold move, Captain.'",
-            "A quiet chuckle. 'You’re lucky it’s you.'",
-            "Rachel lowers her voice. 'Do that again… slowly.'"
-        ];
+        const mood = getMood();
+        const isOwner = message.author.id === OWNER_ID;
 
-        const pokeOtherLines = [
-            "Ouch, stop that right now!",
-            "Rachel glares at you. 'Don't.'",
-            "She swats your hand away. 'Annoying.'",
-            "Rachel exhales. 'Keep your distance.'",
-            "She stares coldly. 'You’re testing my patience.'",
-            "Rachel doesn’t react. '…Was that supposed to do something?'",
-            "She shifts away. 'Try that again and I won’t be so nice.'",
-            "Rachel frowns. 'You’re irritating.'",
-            "She ignores you completely.",
-            "Rachel sighs. 'Do you need something?'"
-        ];
+        const responses = {
+            cheerful: {
+                owner: [
+                    "You can poke me anytime, darling Captain.",
+                    "A soft laugh. 'You’re being playful today… I like it.'",
+                    "Rachel smiles. 'Trying to get my attention?'"
+                ],
+                user: [
+                    "Hey! That tickles 😆",
+                    "Rachel laughs lightly. 'You're in a good mood, huh?'",
+                    "She nudges you back playfully."
+                ]
+            },
 
-        if (message.author.id === OWNER_ID) {
-            channel.send(pokeOwnerLines[Math.floor(Math.random() * pokeOwnerLines.length)]);
-        } else {
-            channel.send(pokeOtherLines[Math.floor(Math.random() * pokeOtherLines.length)]);
-        }
+            playful: {
+                owner: [
+                    "Rachel smirks. 'That’s all you’ve got?'",
+                    "She taps you back lightly. 'Careful, Captain… I poke back.'",
+                    "Rachel lowers her voice. 'Do that again… slowly.'",
+                    "She nudges you. 'Don’t start something you can’t finish.'"
+                ],
+                user: [
+                    "Oh? You wanna start something? 😏",
+                    "Rachel pokes you back. 'Careful.'",
+                    "She grins. 'Bold move.'"
+                ]
+            },
+
+            sarcastic: {
+                owner: [
+                    "Rachel raises an eyebrow. 'Really, Captain?'",
+                    "A quiet chuckle. 'You built me for this?'",
+                    "She tilts her head. 'Peak entertainment.'"
+                ],
+                user: [
+                    "Wow. Incredible.",
+                    "Rachel stares. 'You done?'",
+                    "…That was necessary?"
+                ]
+            },
+
+            sleepy: {
+                owner: [
+                    "...Captain 😴 must you...",
+                    "Rachel sighs softly. 'You always pick the worst timing…'",
+                    "She leans away. 'Let me rest…'"
+                ],
+                user: [
+                    "...why 😴",
+                    "Rachel barely reacts. 'I was resting…'",
+                    "She exhales slowly. 'Not now…'"
+                ]
+            }
+        };
+
+        const pool = isOwner ? responses[mood].owner : responses[mood].user;
+        const reply = pool[Math.floor(Math.random() * pool.length)];
+
+        channel.send(reply);
     }
 };
