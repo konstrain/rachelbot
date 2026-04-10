@@ -32,7 +32,22 @@ const bot = new Discord.Client({
     ]
 });
 
-bot.on('clientReady', () => {
+// 👇 ADD THIS BLOCK HERE
+bot.on('error', console.error);
+bot.on('warn', console.warn);
+bot.on('debug', msg => console.log('[DEBUG]', msg));
+bot.on('shardError', error => console.error('[SHARD ERROR]', error));
+bot.on('shardDisconnect', (event, id) => {
+    console.error(`[SHARD DISCONNECT] shard ${id}`, event);
+});
+bot.on('shardReconnecting', id => {
+    console.log(`[SHARD RECONNECTING] shard ${id}`);
+});
+bot.on('shardReady', id => {
+    console.log(`[SHARD READY] shard ${id}`);
+});
+
+bot.once('ready', () => {
     console.log('Connected yo! Can you see me!? ');
 
     // ---------------- STATUS (your existing feature) ----------------
