@@ -218,6 +218,8 @@ bot.on('messageCreate', async message => {
     const args = text.slice(auth.prefix.length).trim().split(/ +/g);
     const cmd = args.shift()?.toLowerCase();
 
+    console.log("Command received:", cmd);
+
     const context = {
         OWNER_ID,
         randomizeJoke,
