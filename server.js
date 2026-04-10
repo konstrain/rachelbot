@@ -3,7 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const { getMood } = require('./mood');
 const inputFile2 = 'vitalStats.csv';
+
 console.log("Processing CSV file");
+
+// ---------------- EXPRESS (KEEP ALIVE) ----------------
 
 const express = require('express');
 const app = express();
@@ -17,6 +20,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Web server running on port ${PORT}`);
 });
+
+// ---------------- DISCORD SETUP ----------------
 
 const OWNER_ID = '350550564527931392';
 
@@ -32,29 +37,29 @@ const bot = new Discord.Client({
     ]
 });
 
-// 👇 ADD THIS BLOCK HERE
+// ---------------- DEBUG LOGGING ----------------
+
 bot.on('error', console.error);
 bot.on('warn', console.warn);
-bot.on('debug', msg => {
-    if (!msg.toLowerCase().includes('provided token')) {
-        console.log('[DEBUG]', msg);
-    }
-});
+
 bot.on('shardError', error => console.error('[SHARD ERROR]', error));
+
 bot.on('shardDisconnect', (event, id) => {
-    console.error(`[SHARD DISCONNECT] shard ${id}`, event);
+    console.error(`[SHARD DISCONNECT] shard ${id} code=${event?.code} reason=${event?.reason}`);
 });
+
 bot.on('shardReconnecting', id => {
     console.log(`[SHARD RECONNECTING] shard ${id}`);
 });
+
 bot.on('shardReady', id => {
     console.log(`[SHARD READY] shard ${id}`);
 });
 
-bot.once('ready', () => {
-    console.log('Connected yo! Can you see me!? ');
+// ---------------- READY ----------------
 
-    // ---------------- STATUS (your existing feature) ----------------
+bot.once('ready', () => {
+    console.log('Connected yo! Can you see me!?');
 
     const moodText = {
         cheerful: "in a good mood 😊",
@@ -74,11 +79,11 @@ bot.once('ready', () => {
     updateActivity();
     setInterval(updateActivity, 30000);
 
-    // ---------------- RANDOM TALK (NEW FEATURE) ----------------
+    // ---------------- RANDOM TALK ----------------
 
     const TALK_CHANNELS = [
-        '453918676022722561', // replace
-        '1301455116460752936'  // replace
+        '453918676022722561',
+        '1301455116460752936'
     ];
 
     const randomTalk = () => {
@@ -130,9 +135,7 @@ bot.once('ready', () => {
     }, 60 * 60 * 1000);
 });
 
-bot.on('error', console.error);
-
-// ------------------- COMMAND LOADER -------------------
+// ---------------- COMMAND LOADER ----------------
 
 const commands = new Map();
 const commandsPath = path.join(__dirname, 'commands');
@@ -152,7 +155,7 @@ if (fs.existsSync(commandsPath)) {
     }
 }
 
-// ------------------- RANDOM JOKE -------------------
+// ---------------- RANDOM JOKE ----------------
 
 const randomizeJoke = (channel) => {
     try {
@@ -206,7 +209,7 @@ const randomizeJoke = (channel) => {
     }
 };
 
-// ------------------- BOT LOGIC -------------------
+// ---------------- BOT LOGIC ----------------
 
 bot.on('messageCreate', async message => {
 
@@ -217,12 +220,7 @@ bot.on('messageCreate', async message => {
         if (saymsg.length > 0) {
             await message.channel.send(saymsg);
         }
-        try {
-            await message.delete();
-        } catch (e) {
-            console.error(e);
-        }
-        return;
+        return; // removed delete to avoid permission error
     }
 
     if (!message.content.toLowerCase().startsWith(auth.prefix.toLowerCase())) return;
@@ -245,10 +243,18 @@ bot.on('messageCreate', async message => {
     };
 
     const modularCommand = commands.get(cmd);
+
     if (modularCommand) {
-        return modularCommand.execute(message, args, channel, context);
+        try {
+            return await modularCommand.execute(message, args, channel, context);
+        } catch (err) {
+            console.error("Command error:", err);
+            channel.send("...something went wrong.");
+        }
     }
 });
+
+// ---------------- LOGIN ----------------
 
 process.on('unhandledRejection', console.error);
 process.on('uncaughtException', console.error);
@@ -256,6 +262,16 @@ process.on('uncaughtException', console.error);
 console.log("About to log in to Discord...");
 console.log("BOT_TOKEN exists:", !!process.env.BOT_TOKEN);
 
+const loginTimeout = setTimeout(() => {
+    console.error("Login appears stuck after 20 seconds.");
+}, 20000);
+
 bot.login(process.env.BOT_TOKEN)
-    .then(() => console.log("Login request sent to Discord"))
-    .catch(err => console.error("Login failed:", err));
+    .then(() => {
+        clearTimeout(loginTimeout);
+        console.log("Login request sent to Discord");
+    })
+    .catch(err => {
+        clearTimeout(loginTimeout);
+        console.error("Login failed:", err);
+    });
