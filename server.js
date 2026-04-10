@@ -236,5 +236,11 @@ bot.on('messageCreate', async message => {
 });
 
 process.on('unhandledRejection', console.error);
+process.on('uncaughtException', console.error);
 
-bot.login(process.env.BOT_TOKEN);
+console.log("About to log in to Discord...");
+console.log("BOT_TOKEN exists:", !!process.env.BOT_TOKEN);
+
+bot.login(process.env.BOT_TOKEN)
+    .then(() => console.log("Login request sent to Discord"))
+    .catch(err => console.error("Login failed:", err));
