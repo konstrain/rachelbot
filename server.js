@@ -35,7 +35,11 @@ const bot = new Discord.Client({
 // 👇 ADD THIS BLOCK HERE
 bot.on('error', console.error);
 bot.on('warn', console.warn);
-bot.on('debug', msg => console.log('[DEBUG]', msg));
+bot.on('debug', msg => {
+    if (!msg.toLowerCase().includes('provided token')) {
+        console.log('[DEBUG]', msg);
+    }
+});
 bot.on('shardError', error => console.error('[SHARD ERROR]', error));
 bot.on('shardDisconnect', (event, id) => {
     console.error(`[SHARD DISCONNECT] shard ${id}`, event);
