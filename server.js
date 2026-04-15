@@ -28,7 +28,7 @@ const OWNER_ID = '350550564527931392';
 const Discord = require('discord.js');
 const { GatewayIntentBits, EmbedBuilder } = Discord;
 const auth = {
-    prefix: process.env.BOT_PREFIX || "."
+  prefix: process.env.BOT_PREFIX || "."
 };
 
 const bot = new Discord.Client({
