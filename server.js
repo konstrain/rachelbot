@@ -60,7 +60,7 @@ bot.on('shardReady', id => {
 
 // ---------------- READY ----------------
 
-bot.once('ready', () => {
+bot.once('clientReady', () => {
     console.log('Connected yo! Can you see me!?');
 
     const moodText = {
